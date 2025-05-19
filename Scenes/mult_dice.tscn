@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://bpixuutkjt0je"]
+[gd_scene load_steps=3 format=3 uid="uid://bpixuutkjt0je"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" uid="uid://jyeil7vk02u4" path="res://Scripts/MultiplierDie.gd" id="1_qnux2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_agedd"]
+
+[node name="multiplier_die" type="Node3D"]
+script = ExtResource("1_qnux2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_agedd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999883, 0, 0.015271, 0, 1, 0, -0.015271, 0, 0.999883, 0.00310731, 0.0182071, 1.52506)
+fov = 140.625
+far = 4023.15
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

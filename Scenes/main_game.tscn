@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw3w34kbru0l7"]
+
+[ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
+[ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
+[ext_resource type="PackedScene" uid="uid://bpixuutkjt0je" path="res://Scenes/mult_dice.tscn" id="2_0e3vx"]
+
+[node name="main_game" type="Node2D"]
+script = ExtResource("1_0e3vx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_right = 2252.0
+offset_bottom = 1073.0
+
+[node name="IntViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="interger_die" parent="CanvasLayer/SubViewportContainer/IntViewport" instance=ExtResource("1_pu3va")]
+
+[node name="MultViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="multiplier_die" parent="CanvasLayer/SubViewportContainer/MultViewport" instance=ExtResource("2_0e3vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Roll Dice" type="Button" parent="CanvasLayer"]
+offset_left = 558.0
+offset_top = 417.0
+offset_right = 804.0
+offset_bottom = 565.0
+text = "Roll Dice"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+
+[connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]

@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bad6sl6cl00gp" path="res://Scripts/IntergerDie.gd" id="1_fbs7m"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_xechp"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_fbs7m"]
 
 [node name="interger_die" type="Node3D"]
 script = ExtResource("1_fbs7m")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_fbs7m")
+
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999883, 0, 0.015271, 0, 1, 0, -0.015271, 0, 0.999883, 0.00310731, 0.0182071, 1.52506)
+fov = 140.625
+far = 4023.15
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_xechp")
