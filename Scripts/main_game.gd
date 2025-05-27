@@ -1,11 +1,10 @@
 extends Node2D
 
 @onready var int_dice = $CanvasLayer/SubViewportContainer/IntViewport/interger_die
-@onready var mult_dice = $CanvasLayer/SubViewportContainer/MultViewport/multiplier_die
+@onready var mult_dice = $CanvasLayer/SubViewportContainer2/MultViewport/multiplier_die
 @onready var score_label = $CanvasLayer/ScoreLabel
 
 func _ready():
-	roll_all_dice()
 	pass
 
 func roll_all_dice():

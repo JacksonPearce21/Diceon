@@ -1,3 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747608877
-icon.svg::CompressedTexture2D::1211420906701782061::1747608853::1747608879::1::::<><><>0<>0<>4c269a15779ba2ec2014f163b40886df<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://::1748307953
+icon.svg::CompressedTexture2D/CompressedTexture2D::1211420906701782061::1747608853::1747608879::1::::<><><>0<>0<>4c269a15779ba2ec2014f163b40886df<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1747609573::0::1::::<><><>0<>0<><>::
+::res://Assets/::1747608956
+::res://Scenes/::1747709302
+int_dice.tscn::PackedScene::1035857672972009650::1747709178::0::1::::<><><>0<>0<><>::uid://bad6sl6cl00gp::::res://Scripts/IntergerDie.gd
+main_game.tscn::PackedScene::8762606502994055498::1747709181::0::1::::<><><>0<>0<><>::uid://cg0s6ul11jicy::::res://Scripts/main_game.gd<>uid://o01oo036vh67::::res://Scenes/int_dice.tscn<>uid://bpixuutkjt0je::::res://Scenes/mult_dice.tscn
+mult_dice.tscn::PackedScene::3457201647293235650::1747709302::0::1::::<><><>0<>0<><>::uid://jyeil7vk02u4::::res://Scripts/MultiplierDie.gd
+::res://Scripts/::1747619325
+IntergerDie.gd::GDScript::2394528813773699639::1747618794::0::1::::<>Node3D<><>0<>0<><>::
+main_game.gd::GDScript::5246733207223019236::1747619325::0::1::::<>Node2D<><>0<>0<><>::
+MultiplierDie.gd::GDScript::681502441321145785::1747619109::0::1::::<>Node3D<><>0<>0<><>::
+::res://UI/::1747608970

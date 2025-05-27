@@ -8,4 +8,4 @@ func roll():
 	tween_to_face(current_face_value)
 
 func tween_to_face(value):
-	print("Rolling to face with value:", value)
+	print("Rolling INT to face with value:", value)
