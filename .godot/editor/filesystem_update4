@@ -1,6 +1,3 @@
 res://Scenes/mult_dice.tscn
-res://Scenes/int_dice.tscn
 res://Scenes/main_game.tscn
-res://Scripts/main_game.gd
-res://Scripts/IntergerDie.gd
-res://Scripts/MultiplierDie.gd
+res://Scenes/int_dice.tscn

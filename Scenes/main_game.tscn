@@ -10,10 +10,11 @@ script = ExtResource("1_0e3vx")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_left = 104.0
-offset_top = -20.0
-offset_right = 616.0
-offset_bottom = 492.0
+offset_left = -126.0
+offset_top = -186.0
+offset_right = 386.0
+offset_bottom = 326.0
+scale = Vector2(1.7, 1.7)
 
 [node name="IntViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
 transparent_bg = true
@@ -25,10 +26,10 @@ render_target_update_mode = 4
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.035
-offset_left = 565.0
-offset_top = -12.0
-offset_right = 1036.68
-offset_bottom = 500.0
+offset_left = 605.0
+offset_top = -5.0
+offset_right = 1076.68
+offset_bottom = 507.0
 
 [node name="MultViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer2"]
 transparent_bg = true
@@ -39,10 +40,10 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="Roll Dice" type="Button" parent="CanvasLayer"]
-offset_left = 283.0
-offset_top = 481.0
-offset_right = 529.0
-offset_bottom = 629.0
+offset_left = 448.0
+offset_top = 474.0
+offset_right = 694.0
+offset_bottom = 622.0
 text = "Roll Dice"
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
