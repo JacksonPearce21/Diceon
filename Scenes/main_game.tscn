@@ -23,6 +23,13 @@ render_target_update_mode = 4
 
 [node name="interger_die" parent="CanvasLayer/SubViewportContainer/IntViewport" instance=ExtResource("1_pu3va")]
 
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/IntViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+fov = 120.0
+far = 4023.15
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/IntViewport"]
+
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.035
@@ -37,6 +44,14 @@ handle_input_locally = false
 render_target_update_mode = 4
 
 [node name="multiplier_die" parent="CanvasLayer/SubViewportContainer2/MultViewport" instance=ExtResource("2_0e3vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+fov = 120.0
+far = 4023.15
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="Roll Dice" type="Button" parent="CanvasLayer"]
