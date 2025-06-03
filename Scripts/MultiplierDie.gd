@@ -1,12 +1,12 @@
 extends Node3D
 
 @export var sides := {
-	1: {"rotation": Vector3(0, deg_to_rad(90), deg_to_rad(-90))},
-	2: {"rotation": Vector3(0, deg_to_rad(180), 0)},
-	3: {"rotation": Vector3(0, deg_to_rad(-90), 0)},
-	4: {"rotation": Vector3(0, deg_to_rad(90), 0)},
+	1: {"rotation": Vector3(0, 90, -90)},
+	2: {"rotation": Vector3(0, 180, 0)},
+	3: {"rotation": Vector3(0, -90, 0)},
+	4: {"rotation": Vector3(0, 90, 0)},
 	5: {"rotation": Vector3(0, 0, 0)},
-	6: {"rotation": Vector3(0, deg_to_rad(90), deg_to_rad(90))},
+	6: {"rotation": Vector3(0, 90, 90)},
 }
 
 var current_face_value = 5
@@ -20,5 +20,7 @@ func tween_to_face(value: int):
 	if face_data:
 		print("Rolling MULT to face:", value)
 		var rotation = face_data["rotation"]
-		var tween = create_tween()
-		tween.tween_property(self, "rotation", rotation, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var tween_rotation = create_tween()
+		tween_rotation.tween_property(
+			self, "rotation_degrees", rotation, 0.8).set_trans(
+				Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)

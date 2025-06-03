@@ -28,7 +28,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 fov = 120.0
 far = 4023.15
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/IntViewport"]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/IntViewport"]
+light_energy = 0.5
+light_indirect_energy = 0.5
+shadow_enabled = true
+shadow_bias = 0.5
+shadow_blur = 2.0
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = -1
@@ -53,6 +58,11 @@ far = 4023.15
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+light_energy = 0.5
+light_indirect_energy = 0.5
+shadow_enabled = true
+shadow_bias = 0.5
+shadow_blur = 2.0
 
 [node name="Roll Dice" type="Button" parent="CanvasLayer"]
 offset_left = 448.0
