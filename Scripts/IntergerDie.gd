@@ -9,17 +9,26 @@ extends Node3D
 	6: {"rotation": Vector3(60, 179, -75)},
 	7: {"rotation": Vector3(-60, 1, -109)},
 	8: {"rotation": Vector3(62, 179, 72)},
-	9: {"rotation": Vector3(-60, 0, 108)},
+	9: {"rotation": Vector3(-60, -1, 108)},
 	10: {"rotation": Vector3(60, 177, 140)},
 }
 
 var current_face_value = 1
+var tween: Tween
 
 func _ready() -> void:
 	tween_to_face(current_face_value)
 	
 	
 func roll():
+	var random_rot = Vector3(
+		randf_range(180, 360),
+		randf_range(180, 360),
+		randf_range(180, 360)
+	)
+	tween = create_tween()
+	tween.tween_property(self, "rotation_degrees", random_rot, 1.0)
+	await get_tree().create_timer(1.0).timeout
 	current_face_value = sides.keys().pick_random()
 	tween_to_face(current_face_value)
 
