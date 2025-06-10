@@ -22,12 +22,18 @@ func _ready() -> void:
 	
 func roll():
 	var random_rot = Vector3(
-		randf_range(180, 360),
-		randf_range(180, 360),
-		randf_range(180, 360)
+		randf_range(200, 400),
+		randf_range(200, 400),
+		randf_range(200, 400)
+	)
+	var random_rot_end = Vector3(
+		randf_range(100, 200),
+		randf_range(100, 200),
+		randf_range(100, 200)
 	)
 	tween = create_tween()
-	tween.tween_property(self, "rotation_degrees", random_rot, 1.0)
+	tween.tween_property(self, "rotation_degrees", random_rot, 0.7)
+	tween.tween_property(self, "rotation_degrees", random_rot_end, 0.3)
 	await get_tree().create_timer(1.0).timeout
 	current_face_value = sides.keys().pick_random()
 	tween_to_face(current_face_value)

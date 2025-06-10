@@ -10,7 +10,7 @@ func _ready():
 func roll_all_dice():
 	int_dice.roll()
 	mult_dice.roll()
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(1.9).timeout
 	calculate_score()
 
 func calculate_score():

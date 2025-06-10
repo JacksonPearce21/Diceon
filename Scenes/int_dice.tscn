@@ -55,6 +55,5 @@ shadow_mesh = SubResource("ArrayMesh_7lqcb")
 script = ExtResource("1_fbs7m")
 
 [node name="10Silver_10Silver_1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_x1n5m")
 skeleton = NodePath("")
