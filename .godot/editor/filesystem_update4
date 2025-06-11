@@ -4,3 +4,7 @@ res://Scenes/mult_dice.tscn
 res://Scripts/IntergerDie.gd
 res://Scripts/MultiplierDie.gd
 res://Scripts/main_game.gd
+res://Assets/casinotheme.tres
+res://Assets/Button_style_box.tres
+res://Assets/Button_style_hoverd.tres
+res://Assets/Button_style_pressed.tres

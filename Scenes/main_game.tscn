@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=11 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
 [ext_resource type="PackedScene" uid="uid://bpixuutkjt0je" path="res://Scenes/mult_dice.tscn" id="2_0e3vx"]
 [ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="2_6j5ir"]
+[ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="4_18r40"]
+[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="5_6y7pd"]
 [ext_resource type="Texture2D" uid="uid://dkqgtce5dbq8m" path="res://Assets/Multiplication_Sign.svg.png" id="5_mgc0q"]
+[ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="6_73nn6"]
+[ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="7_r0mdn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgc0q"]
 content_margin_left = 8.0
@@ -109,6 +113,24 @@ offset_left = 634.0
 offset_top = 479.0
 offset_right = 880.0
 offset_bottom = 627.0
+theme_override_colors/font_disabled_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_colors/font_hover_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_colors/font_outline_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_colors/font_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = ExtResource("5_6y7pd")
+theme_override_styles/hover_pressed_mirrored = ExtResource("6_73nn6")
+theme_override_styles/hover_pressed = ExtResource("6_73nn6")
+theme_override_styles/hover_mirrored = ExtResource("7_r0mdn")
+theme_override_styles/hover = ExtResource("7_r0mdn")
+theme_override_styles/pressed_mirrored = ExtResource("6_73nn6")
+theme_override_styles/pressed = ExtResource("6_73nn6")
+theme_override_styles/normal_mirrored = ExtResource("5_6y7pd")
+theme_override_styles/normal = ExtResource("5_6y7pd")
 text = "Roll Dice"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer"]
