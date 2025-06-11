@@ -13,11 +13,13 @@ extends Node3D
 	10: {"rotation": Vector3(60, 177, 140)},
 }
 
-var current_face_value = 1
+var current_face_value = sides.keys().pick_random()
 var tween: Tween
+var tween_time = 0
 
 func _ready() -> void:
 	tween_to_face(current_face_value)
+	tween_time = 0.8
 	
 	
 func roll():
@@ -32,8 +34,10 @@ func roll():
 		randf_range(100, 200)
 	)
 	tween = create_tween()
-	tween.tween_property(self, "rotation_degrees", random_rot, 0.7)
-	tween.tween_property(self, "rotation_degrees", random_rot_end, 0.3)
+	tween.tween_property(
+		self, "rotation_degrees", random_rot, 0.7).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(
+		self, "rotation_degrees", random_rot_end, 0.3)
 	await get_tree().create_timer(1.0).timeout
 	current_face_value = sides.keys().pick_random()
 	tween_to_face(current_face_value)
@@ -44,4 +48,5 @@ func tween_to_face(value: int):
 		print("Rolling INT to face:", value)
 		var rotation = face_data["rotation"]
 		var tween = create_tween()
-		tween.tween_property(self, "rotation_degrees", rotation, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		tween.tween_property(
+			self, "rotation_degrees", rotation, tween_time).set_ease(Tween.EASE_OUT)

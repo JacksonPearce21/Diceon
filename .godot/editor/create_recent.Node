@@ -1,3 +1,8 @@
+Sprite2D
+PanelContainer
+Control
+CanvasLayer
+VideoStreamPlayer
 DirectionalLight3D
 DirectionalLight2D
 Camera3D
@@ -6,7 +11,4 @@ SubViewportContainer
 Button
 Label
 SubViewport
-CanvasLayer
 MeshInstance3D
-CollisionShape3D
-RigidBody3D

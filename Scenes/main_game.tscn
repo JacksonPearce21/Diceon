@@ -1,19 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=7 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
 [ext_resource type="PackedScene" uid="uid://bpixuutkjt0je" path="res://Scenes/mult_dice.tscn" id="2_0e3vx"]
+[ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="2_6j5ir"]
+[ext_resource type="Texture2D" uid="uid://dkqgtce5dbq8m" path="res://Assets/Multiplication_Sign.svg.png" id="5_mgc0q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgc0q"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.294118, 0.117647, 0.117647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="main_game" type="Node2D"]
 script = ExtResource("1_0e3vx")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 13.0
+offset_right = 256.0
+offset_bottom = 647.0
+
+[node name="SideBar" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -14.0
+offset_right = 201.0
+offset_bottom = 636.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgc0q")
+
+[node name="ScoreLabel" type="Label" parent="Control/SideBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Score: 0"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_left = -126.0
-offset_top = -186.0
-offset_right = 386.0
-offset_bottom = 326.0
+offset_left = 100.0
+offset_top = -142.0
+offset_right = 612.0
+offset_bottom = 370.0
 scale = Vector2(1.7, 1.7)
 
 [node name="IntViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
@@ -38,10 +77,10 @@ shadow_blur = 2.0
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.035
-offset_left = 605.0
-offset_top = -5.0
-offset_right = 1076.68
-offset_bottom = 507.0
+offset_left = 692.0
+offset_top = 49.0
+offset_right = 1163.68
+offset_bottom = 561.0
 
 [node name="MultViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer2"]
 transparent_bg = true
@@ -53,7 +92,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
-fov = 120.0
+current = true
+fov = 115.0
 far = 4023.15
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
@@ -65,18 +105,23 @@ shadow_bias = 0.5
 shadow_blur = 2.0
 
 [node name="Roll Dice" type="Button" parent="CanvasLayer"]
-offset_left = 448.0
-offset_top = 474.0
-offset_right = 694.0
-offset_bottom = 622.0
+offset_left = 634.0
+offset_top = 479.0
+offset_right = 880.0
+offset_bottom = 627.0
 text = "Roll Dice"
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_left = 492.0
-offset_top = 79.0
-offset_right = 605.0
-offset_bottom = 127.0
-theme_override_font_sizes/font_size = 30
-text = "Score: 0"
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer"]
+layer = -1
+
+[node name="Backround" type="Sprite2D" parent="CanvasLayer/CanvasLayer2"]
+position = Vector2(576.5, 320)
+scale = Vector2(0.384333, 0.329)
+texture = ExtResource("2_6j5ir")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/CanvasLayer2"]
+position = Vector2(755, 302)
+scale = Vector2(0.115938, 0.104844)
+texture = ExtResource("5_mgc0q")
 
 [connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]

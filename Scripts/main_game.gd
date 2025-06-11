@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var int_dice = $CanvasLayer/SubViewportContainer/IntViewport/interger_die
 @onready var mult_dice = $CanvasLayer/SubViewportContainer2/MultViewport/multiplier_die
-@onready var score_label = $CanvasLayer/ScoreLabel
+@onready var score_label = $Control/SideBar/ScoreLabel
 
 func _ready():
 	pass
