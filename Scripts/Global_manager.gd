@@ -11,6 +11,6 @@ func decrease_roll():
 	dice_rolls -= 1
 	
 func round_increase():
-	score_needed * (current_round * 1.5) + 25
+	score_needed = score_needed * (current_round * 1.5) + 25
 	
 	

@@ -12,7 +12,7 @@ var round_score = 0
 func _ready():
 	round_num_label.text = str(GlobalManager.current_round)
 	rolls_label.text = str(GlobalManager.dice_rolls)
-	required_score_label = str(GlobalManager.score_needed)
+	required_score_label.text = str(GlobalManager.score_needed)
 	score_label.text = str(round_score)
 	pass
 
@@ -23,6 +23,7 @@ func roll_all_dice():
 	mult_dice.roll()
 	await get_tree().create_timer(1.9).timeout
 	calculate_score()
+	$"CanvasLayer/Roll Dice".disabled = false
 
 func calculate_score():
 	var base = int_dice.current_face_value
@@ -31,7 +32,20 @@ func calculate_score():
 	added_score_label.text = "+ %.0f" % total
 	round_score += total
 	score_label.text = str(round_score)
+	check_round_status()
 
+func check_round_status():
+	if GlobalManager.score_needed <= round_score:
+		pass
+	if GlobalManager.score_needed > round_score:
+		if GlobalManager.dice_rolls == 0:
+			game_over()
+			
+func game_over():
+	get_tree().quit()
+		
+		
 
 func _on_button_pressed():
+	$"CanvasLayer/Roll Dice".disabled = true
 	roll_all_dice()
