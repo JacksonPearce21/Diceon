@@ -36,12 +36,14 @@ func calculate_score():
 
 func check_round_status():
 	if GlobalManager.score_needed <= round_score:
+		print("You Win")
 		pass
 	if GlobalManager.score_needed > round_score:
 		if GlobalManager.dice_rolls == 0:
 			game_over()
 			
 func game_over():
+	print("game_over")
 	get_tree().quit()
 		
 		
