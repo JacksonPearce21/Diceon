@@ -59,18 +59,22 @@ offset_bottom = 636.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mgc0q")
 
 [node name="Score" type="Label" parent="Control/SideBar"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_18r40")
 
 [node name="Rolls" type="Label" parent="Control/SideBar"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_18r40")
-text = "4"
 
 [node name="Required_score" type="Label" parent="Control/SideBar"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_18r40")
-text = "50"
+
+[node name="Round_num" type="Label" parent="Control/SideBar"]
+visible = false
+layout_mode = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

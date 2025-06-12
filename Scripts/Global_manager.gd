@@ -1,5 +1,16 @@
 extends Node
 
-var round_num = 1
 var dice_rolls = 4
-var required_score = (50 * (round_num * 1.5)) + 25
+var current_round = 1
+var score_needed = 50
+
+func next_round():
+	current_round += 1
+	
+func decrease_roll():
+	dice_rolls -= 1
+	
+func round_increase():
+	score_needed * (current_round * 1.5) + 25
+	
+	
