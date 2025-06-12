@@ -14,3 +14,7 @@ config/name="Diceon"
 run/main_scene="uid://dw3w34kbru0l7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalManager="*res://Scripts/Global_manager.gd"
