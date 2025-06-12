@@ -1,4 +1,5 @@
 Label
+Panel
 Sprite2D
 PanelContainer
 Control
@@ -11,4 +12,3 @@ Node3D
 SubViewportContainer
 Button
 SubViewport
-MeshInstance3D

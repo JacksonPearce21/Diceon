@@ -15,7 +15,7 @@ content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.328533, 0.0655578, 0.13997, 1)
+bg_color = Color(0.229034, 0.218601, 0.198045, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -50,31 +50,120 @@ offset_top = 13.0
 offset_right = 256.0
 offset_bottom = 647.0
 
-[node name="SideBar" type="PanelContainer" parent="Control"]
+[node name="SideBar" type="Panel" parent="Control"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = -14.0
-offset_right = 201.0
-offset_bottom = 636.0
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 267.0
+offset_bottom = 634.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mgc0q")
 
 [node name="Score" type="Label" parent="Control/SideBar"]
-visible = false
 layout_mode = 2
+offset_left = 10.0
+offset_top = 181.0
+offset_right = 268.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
 
 [node name="Rolls" type="Label" parent="Control/SideBar"]
 layout_mode = 2
+offset_left = 37.0
+offset_top = 586.0
+offset_right = 70.0
+offset_bottom = 628.0
+theme_override_colors/font_color = Color(0.266667, 0.443137, 1, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "5"
+horizontal_alignment = 1
 
 [node name="Required_score" type="Label" parent="Control/SideBar"]
-visible = false
 layout_mode = 2
+offset_left = 7.0
+offset_top = 66.0
+offset_right = 265.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
 
 [node name="Round_num" type="Label" parent="Control/SideBar"]
-visible = false
 layout_mode = 2
+offset_left = 67.0
+offset_top = 583.0
+offset_right = 325.0
+offset_bottom = 625.0
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+
+[node name="Rolls_text" type="Label" parent="Control/SideBar"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 546.0
+offset_right = 101.0
+offset_bottom = 588.0
+theme_override_colors/font_color = Color(0.267833, 0.443154, 1, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "Rolls"
+horizontal_alignment = 1
+
+[node name="Score_text" type="Label" parent="Control/SideBar"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 134.0
+offset_right = 265.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "Score"
+horizontal_alignment = 1
+
+[node name="Required_score_text" type="Label" parent="Control/SideBar"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 19.0
+offset_right = 262.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "Required Score"
+horizontal_alignment = 1
+
+[node name="Round_num_text" type="Label" parent="Control/SideBar"]
+layout_mode = 2
+offset_left = 110.0
+offset_top = 545.0
+offset_right = 294.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "Round"
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="Control/SideBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "$4"
+
+[node name="Money_text" type="Label" parent="Control/SideBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Money"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
