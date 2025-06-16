@@ -20,7 +20,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.721569, 0.52549, 0.0431373, 1)
+border_color = Color(0.328983, 0.121017, 0.0474698, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -58,28 +58,16 @@ offset_right = 267.0
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mgc0q")
 
-[node name="Score" type="Label" parent="Control/SideBar"]
+[node name="Required_score_text" type="Label" parent="Control/SideBar"]
 layout_mode = 2
-offset_left = 110.0
-offset_top = 134.0
-offset_right = 267.0
-offset_bottom = 176.0
+offset_left = 4.0
+offset_top = 19.0
+offset_right = 262.0
+offset_bottom = 61.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 30
-text = "1"
-horizontal_alignment = 1
-
-[node name="Rolls" type="Label" parent="Control/SideBar"]
-layout_mode = 2
-offset_left = 37.0
-offset_top = 586.0
-offset_right = 70.0
-offset_bottom = 628.0
-theme_override_colors/font_color = Color(0.266667, 0.443137, 1, 1)
-theme_override_fonts/font = ExtResource("4_18r40")
-theme_override_font_sizes/font_size = 30
-text = "5"
+text = "Required Score"
 horizontal_alignment = 1
 
 [node name="Required_score" type="Label" parent="Control/SideBar"]
@@ -94,17 +82,51 @@ theme_override_font_sizes/font_size = 30
 text = "50"
 horizontal_alignment = 1
 
-[node name="Round_num" type="Label" parent="Control/SideBar"]
+[node name="Score_text" type="Label" parent="Control/SideBar"]
 layout_mode = 2
-offset_left = 67.0
-offset_top = 583.0
-offset_right = 325.0
-offset_bottom = 625.0
-theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+offset_left = 7.0
+offset_top = 134.0
+offset_right = 112.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Control/SideBar"]
+layout_mode = 2
+offset_left = 110.0
+offset_top = 134.0
+offset_right = 267.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 30
 text = "1"
 horizontal_alignment = 1
+
+[node name="Money_text" type="Label" parent="Control/SideBar"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 453.0
+offset_right = 180.0
+offset_bottom = 495.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "Money"
+
+[node name="Money" type="Label" parent="Control/SideBar"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 483.0
+offset_right = 144.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0.874404, 0.882812, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "$4"
 
 [node name="Rolls_text" type="Label" parent="Control/SideBar"]
 layout_mode = 2
@@ -118,28 +140,16 @@ theme_override_font_sizes/font_size = 30
 text = "Rolls"
 horizontal_alignment = 1
 
-[node name="Score_text" type="Label" parent="Control/SideBar"]
+[node name="Rolls" type="Label" parent="Control/SideBar"]
 layout_mode = 2
-offset_left = 7.0
-offset_top = 134.0
-offset_right = 105.0
-offset_bottom = 176.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+offset_left = 37.0
+offset_top = 586.0
+offset_right = 70.0
+offset_bottom = 628.0
+theme_override_colors/font_color = Color(0.266667, 0.443137, 1, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 30
-text = "Score:"
-horizontal_alignment = 1
-
-[node name="Required_score_text" type="Label" parent="Control/SideBar"]
-layout_mode = 2
-offset_left = 4.0
-offset_top = 19.0
-offset_right = 262.0
-offset_bottom = 61.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_18r40")
-theme_override_font_sizes/font_size = 30
-text = "Required Score"
+text = "5"
 horizontal_alignment = 1
 
 [node name="Round_num_text" type="Label" parent="Control/SideBar"]
@@ -154,27 +164,17 @@ theme_override_font_sizes/font_size = 30
 text = "Round"
 horizontal_alignment = 1
 
-[node name="Money" type="Label" parent="Control/SideBar"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 483.0
-offset_right = 144.0
-offset_bottom = 525.0
-theme_override_colors/font_color = Color(0.874404, 0.882812, 3.85046e-07, 1)
+[node name="Round_num" type="Label" parent="Control/SideBar"]
+layout_mode = 2
+offset_left = 67.0
+offset_top = 583.0
+offset_right = 325.0
+offset_bottom = 625.0
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 30
-text = "$4"
-
-[node name="Money_text" type="Label" parent="Control/SideBar"]
-layout_mode = 0
-offset_left = 69.0
-offset_top = 453.0
-offset_right = 180.0
-offset_bottom = 495.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_18r40")
-theme_override_font_sizes/font_size = 30
-text = "Money"
+text = "1"
+horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

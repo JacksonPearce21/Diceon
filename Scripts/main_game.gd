@@ -10,15 +10,19 @@ extends Node2D
 var round_score = 0
 
 func _ready():
+	update_labels()
+	pass
+	
+func update_labels():
 	round_num_label.text = str(GlobalManager.current_round)
 	rolls_label.text = str(GlobalManager.dice_rolls)
 	required_score_label.text = str(GlobalManager.score_needed)
 	score_label.text = str(round_score)
-	pass
+	
 
 func roll_all_dice():
 	GlobalManager.decrease_roll()
-	rolls_label.text = str(GlobalManager.dice_rolls)
+	update_labels()
 	int_dice.roll()
 	mult_dice.roll()
 	await get_tree().create_timer(1.9).timeout
@@ -31,7 +35,7 @@ func calculate_score():
 	var total = base * mult
 	added_score_label.text = "+ %.0f" % total
 	round_score += total
-	score_label.text = str(round_score)
+	update_labels()
 	check_round_status()
 
 func check_round_status():
@@ -45,8 +49,6 @@ func check_round_status():
 func game_over():
 	print("game_over")
 	get_tree().quit()
-		
-		
 
 func _on_button_pressed():
 	$"CanvasLayer/Roll Dice".disabled = true
