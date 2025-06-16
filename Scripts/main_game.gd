@@ -7,9 +7,11 @@ extends Node2D
 @onready var rolls_label = $Control/SideBar/Rolls
 @onready var required_score_label = $Control/SideBar/Required_score
 @onready var round_num_label = $Control/SideBar/Round_num
+@onready var EOR_popup = $CanvasLayer/EOR_popup
 var round_score = 0
 
 func _ready():
+	EOR_popup.hide()
 	update_labels()
 	pass
 	
@@ -27,6 +29,7 @@ func roll_all_dice():
 	mult_dice.roll()
 	await get_tree().create_timer(1.9).timeout
 	calculate_score()
+	check_game_status()
 	$"CanvasLayer/Roll Dice".disabled = false
 
 func calculate_score():
@@ -36,11 +39,11 @@ func calculate_score():
 	added_score_label.text = "+ %.0f" % total
 	round_score += total
 	update_labels()
-	check_round_status()
 
-func check_round_status():
+func check_game_status():
 	if GlobalManager.score_needed <= round_score:
 		print("You Win")
+		EOR_popup.show()
 		pass
 	if GlobalManager.score_needed > round_score:
 		if GlobalManager.dice_rolls == 0:

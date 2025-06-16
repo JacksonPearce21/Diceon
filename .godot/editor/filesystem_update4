@@ -5,3 +5,5 @@ res://Assets/Button_style_pressed.tres
 res://Scenes/int_dice.tscn
 res://Scenes/mult_dice.tscn
 res://Scenes/eor_popup.tscn
+res://Scripts/Global_manager.gd
+res://Scripts/eor_popup.gd

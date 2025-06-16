@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=12 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dkqgtce5dbq8m" path="res://Assets/Multiplication_Sign.svg.png" id="5_mgc0q"]
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="6_73nn6"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="7_r0mdn"]
+[ext_resource type="PackedScene" uid="uid://c5am5xdlwbbvv" path="res://Scenes/eor_popup.tscn" id="10_r0mdn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgc0q"]
 content_margin_left = 8.0
@@ -36,11 +37,6 @@ layer = -1
 position = Vector2(576.5, 320)
 scale = Vector2(0.384333, 0.329)
 texture = ExtResource("2_6j5ir")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(755, 302)
-scale = Vector2(0.115938, 0.104844)
-texture = ExtResource("5_mgc0q")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -177,6 +173,8 @@ text = "1"
 horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(0, 50)
+transform = Transform2D(1, 0, 0, 1, 0, 50)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
 offset_left = 100.0
@@ -198,11 +196,13 @@ fov = 120.0
 far = 4023.15
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/IntViewport"]
-light_energy = 0.5
-light_indirect_energy = 0.5
+light_energy = 0.4
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
-shadow_bias = 0.5
-shadow_blur = 2.0
+shadow_bias = 2.0
+shadow_opacity = 0.5
+shadow_blur = 4.0
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = -1
@@ -228,7 +228,7 @@ far = 4023.15
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
-light_energy = 0.5
+light_energy = 0.4
 light_indirect_energy = 0.5
 shadow_enabled = true
 shadow_bias = 0.5
@@ -259,6 +259,11 @@ theme_override_styles/normal_mirrored = ExtResource("5_6y7pd")
 theme_override_styles/normal = ExtResource("5_6y7pd")
 text = "Roll Dice"
 
+[node name="MultiplySign" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(755, 302)
+scale = Vector2(0.115938, 0.104844)
+texture = ExtResource("5_mgc0q")
+
 [node name="Added_score" type="Label" parent="CanvasLayer"]
 offset_left = 721.0
 offset_top = 117.0
@@ -269,4 +274,14 @@ theme_override_font_sizes/font_size = 30
 text = "+ 0"
 horizontal_alignment = 1
 
+[node name="EOR_popup" parent="CanvasLayer" instance=ExtResource("10_r0mdn")]
+visible = false
+z_index = 50
+position = Vector2(179, 7)
+
+[node name="cash_out" parent="CanvasLayer/EOR_popup/Pop-up" index="6"]
+layout_mode = 0
+
 [connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]
+
+[editable path="CanvasLayer/EOR_popup"]

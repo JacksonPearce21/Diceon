@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5am5xdlwbbvv"]
+[gd_scene load_steps=7 format=3 uid="uid://c5am5xdlwbbvv"]
 
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="1_2e1hu"]
+[ext_resource type="Script" uid="uid://cr1omxfymrqbh" path="res://Scripts/eor_popup.gd" id="1_dayh2"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="2_dayh2"]
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="3_fpj8r"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="4_ewfj4"]
@@ -22,6 +23,7 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [node name="EOR_popup" type="Node2D"]
+script = ExtResource("1_dayh2")
 
 [node name="Pop-up" type="Panel" parent="."]
 offset_left = 193.0
@@ -103,9 +105,9 @@ text = "$1"
 horizontal_alignment = 1
 
 [node name="cash_out" type="Button" parent="Pop-up"]
-offset_left = 40.0
+offset_left = 25.0
 offset_top = 21.0
-offset_right = 674.0
+offset_right = 693.0
 offset_bottom = 129.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
