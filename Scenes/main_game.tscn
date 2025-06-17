@@ -49,7 +49,7 @@ offset_bottom = 647.0
 [node name="SideBar" type="Panel" parent="Control"]
 layout_mode = 0
 offset_left = -6.0
-offset_top = -24.0
+offset_top = -34.0
 offset_right = 267.0
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mgc0q")
@@ -280,7 +280,10 @@ z_index = 50
 position = Vector2(179, 7)
 
 [node name="cash_out" parent="CanvasLayer/EOR_popup/Pop-up" index="6"]
-layout_mode = 0
+offset_left = 27.0
+offset_top = 13.0
+offset_right = 695.0
+offset_bottom = 121.0
 
 [connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]
 

@@ -11,6 +11,7 @@ extends Node2D
 var round_score = 0
 
 func _ready():
+	GlobalManager.current_round += 1
 	EOR_popup.hide()
 	update_labels()
 	pass
@@ -36,7 +37,7 @@ func calculate_score():
 	var base = int_dice.current_face_value
 	var mult = mult_dice.current_face_value
 	var total = base * mult
-	added_score_label.text = "+ %.0f" % total
+	added_score_label.text = "+ " + str(total)
 	round_score += total
 	update_labels()
 
@@ -44,6 +45,7 @@ func check_game_status():
 	if GlobalManager.score_needed <= round_score:
 		print("You Win")
 		EOR_popup.show()
+		GlobalManager.round_win()
 		pass
 	if GlobalManager.score_needed > round_score:
 		if GlobalManager.dice_rolls == 0:
