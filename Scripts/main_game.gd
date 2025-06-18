@@ -8,19 +8,25 @@ extends Node2D
 @onready var required_score_label = $Control/SideBar/Required_score
 @onready var round_num_label = $Control/SideBar/Round_num
 @onready var EOR_popup = $CanvasLayer/EOR_popup
+@onready var money_label = $Control/SideBar/Money
 var round_score = 0
 
 func _ready():
+	start_round()
+	pass
+
+func start_round():
 	GlobalManager.current_round += 1
+	round_score = 0
 	EOR_popup.hide()
 	update_labels()
-	pass
 	
 func update_labels():
 	round_num_label.text = str(GlobalManager.current_round)
 	rolls_label.text = str(GlobalManager.dice_rolls)
 	required_score_label.text = str(GlobalManager.score_needed)
 	score_label.text = str(round_score)
+	money_label.text = str(GlobalManager.money)
 	
 
 func roll_all_dice():
@@ -33,19 +39,26 @@ func roll_all_dice():
 	check_game_status()
 	$"CanvasLayer/Roll Dice".disabled = false
 
+	
+
 func calculate_score():
 	var base = int_dice.current_face_value
 	var mult = mult_dice.current_face_value
 	var total = base * mult
 	added_score_label.text = "+ " + str(total)
+	added_score_ani()
 	round_score += total
 	update_labels()
+	
+func added_score_ani():
+	added_score_label.show()
+	await get_tree().create_timer(0.9).timeout
+	added_score_label.hide()
 
 func check_game_status():
 	if GlobalManager.score_needed <= round_score:
 		print("You Win")
-		EOR_popup.show()
-		GlobalManager.round_win()
+		GlobalManager.round_status = true
 		pass
 	if GlobalManager.score_needed > round_score:
 		if GlobalManager.dice_rolls == 0:
@@ -58,3 +71,7 @@ func game_over():
 func _on_button_pressed():
 	$"CanvasLayer/Roll Dice".disabled = true
 	roll_all_dice()
+	
+
+func _on_cash_out_pressed() -> void:
+	start_round()

@@ -265,6 +265,7 @@ scale = Vector2(0.115938, 0.104844)
 texture = ExtResource("5_mgc0q")
 
 [node name="Added_score" type="Label" parent="CanvasLayer"]
+visible = false
 offset_left = 721.0
 offset_top = 117.0
 offset_right = 795.0
@@ -286,5 +287,6 @@ offset_right = 695.0
 offset_bottom = 121.0
 
 [connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EOR_popup/Pop-up/cash_out" to="." method="_on_cash_out_pressed"]
 
 [editable path="CanvasLayer/EOR_popup"]

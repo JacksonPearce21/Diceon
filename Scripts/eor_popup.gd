@@ -7,40 +7,50 @@ var money_made = 0
 @onready var cash_out_btn = $"Pop-up/cash_out"
 
 func _ready():
-	cash_out_btn.disabled
-	
+	cash_out_btn.disabled = true
 	pass
+	
+func _process(delta):
+	if GlobalManager.round_status == true:
+		show()
+		update_labels()
+		GlobalManager.round_status = false
 	
 func calculate_money():
 	cash_out_btn.text =  "Cash Out $" + str(money_made)
 	
-
 func update_money():
 	GlobalManager.money += money_made
-	update_labels()
 	
 func update_labels():
+	await get_tree().create_timer(1).timeout
 	rolls_remaining.text =  "$" + str(GlobalManager.dice_rolls)
+	money_made += GlobalManager.dice_rolls
+	calculate_money()
+	await get_tree().create_timer(1).timeout
 	
-	cash_out_btn.text =  "Cash Out $" + str(money_made)
+	win_money.text =  "$" + str(GlobalManager.win_money)
+	money_made += GlobalManager.win_money
+	calculate_money()
+	await get_tree().create_timer(1).timeout
 	
 	GlobalManager.calc_interest()
 	interest_label.text =  "$" + str(GlobalManager.interest)
-	
-	
+	money_made += GlobalManager.interest
 	calculate_money()
+	await get_tree().create_timer(1).timeout
+	cash_out_btn.disabled = false
 	
 func reset_labels():
 	cash_out_btn.text =  "Cash Out $0"
-	GlobalManager.interest = 0
-	interest_label.text =  "$0" 
-	rolls_remaining.text =  "$0" 
-	
-	
-	
-
+	interest_label.text =  "$"
+	win_money.text = "$" 
+	rolls_remaining.text =  "$"
+	money_made = 0
 
 func _on_cash_out_pressed() -> void:
-	hide()
+	update_money()
+	money_made = 0
 	reset_labels()
+	GlobalManager.next_round()
 	
