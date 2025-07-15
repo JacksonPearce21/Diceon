@@ -3,24 +3,9 @@
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="1_2e1hu"]
 [ext_resource type="Script" uid="uid://cr1omxfymrqbh" path="res://Scripts/eor_popup.gd" id="1_dayh2"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="2_dayh2"]
+[ext_resource type="StyleBox" uid="uid://cd3gq3x358a4d" path="res://UI/MenuStyleBox.tres" id="2_fpj8r"]
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="3_fpj8r"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="4_ewfj4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqavu"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0.229034, 0.218601, 0.198045, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.328983, 0.121017, 0.0474698, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
 
 [node name="EOR_popup" type="Node2D"]
 script = ExtResource("1_dayh2")
@@ -30,7 +15,7 @@ offset_left = 193.0
 offset_top = 111.0
 offset_right = 912.0
 offset_bottom = 658.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qqavu")
+theme_override_styles/panel = ExtResource("2_fpj8r")
 
 [node name="Win_text" type="Label" parent="Pop-up"]
 layout_mode = 2

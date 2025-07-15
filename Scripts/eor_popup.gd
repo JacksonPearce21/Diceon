@@ -47,10 +47,10 @@ func reset_labels():
 	win_money.text = "$" 
 	rolls_remaining.text =  "$"
 	money_made = 0
+	cash_out_btn.disabled = true
 
 func _on_cash_out_pressed() -> void:
 	update_money()
-	money_made = 0
 	reset_labels()
-	GlobalManager.next_round()
+	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 	
