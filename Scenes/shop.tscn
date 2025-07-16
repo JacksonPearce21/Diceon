@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwmlfrx8gkuic"]
+[gd_scene load_steps=10 format=3 uid="uid://bwmlfrx8gkuic"]
 
 [ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="1_a0mxf"]
 [ext_resource type="Script" uid="uid://dh5p4q0e85c4f" path="res://Scenes/shop.gd" id="1_s8dlv"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="5_5xp22"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="6_ow1eo"]
 [ext_resource type="PackedScene" uid="uid://dly6ums2vd1lr" path="res://Scenes/side_bar.tscn" id="7_k6pkm"]
+[ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="9_tyrku"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_s8dlv")
@@ -18,18 +19,18 @@ scale = Vector2(0.384333, 0.329)
 texture = ExtResource("1_a0mxf")
 
 [node name="shopping" type="Panel" parent="."]
-offset_left = 313.0
-offset_top = 150.0
-offset_right = 1139.0
+offset_left = 317.0
+offset_top = 219.0
+offset_right = 1136.0
 offset_bottom = 654.0
 theme_override_styles/panel = ExtResource("2_ymrm4")
 
 [node name="Next_round" type="Button" parent="shopping"]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 22.0
-offset_right = 237.0
-offset_bottom = 130.0
+offset_left = 305.0
+offset_top = 12.0
+offset_right = 508.0
+offset_bottom = 115.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -52,5 +53,36 @@ text = "Next Round"
 
 [node name="SideBar" parent="." instance=ExtResource("7_k6pkm")]
 position = Vector2(20, 0)
+
+[node name="CardSlots" parent="." instance=ExtResource("9_tyrku")]
+position = Vector2(330, 10)
+scale = Vector2(1.15, 1.15)
+
+[node name="Bar" type="Panel" parent="."]
+offset_left = 342.0
+offset_top = 349.0
+offset_right = 1119.0
+offset_bottom = 637.0
+
+[node name="card1" type="Panel" parent="Bar"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 54.0
+offset_right = 163.0
+offset_bottom = 184.0
+
+[node name="card2" type="Panel" parent="Bar"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 54.0
+offset_right = 444.0
+offset_bottom = 184.0
+
+[node name="card3" type="Panel" parent="Bar"]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 43.0
+offset_right = 713.0
+offset_bottom = 173.0
 
 [connection signal="pressed" from="shopping/Next_round" to="." method="_on_next_round_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=13 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
@@ -11,6 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="6_73nn6"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="7_r0mdn"]
 [ext_resource type="PackedScene" uid="uid://c5am5xdlwbbvv" path="res://Scenes/eor_popup.tscn" id="10_r0mdn"]
+[ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="12_tpqse"]
 
 [node name="main_game" type="Node2D"]
 script = ExtResource("1_0e3vx")
@@ -130,17 +131,12 @@ text = "+ 0"
 horizontal_alignment = 1
 
 [node name="EOR_popup" parent="CanvasLayer" instance=ExtResource("10_r0mdn")]
-visible = false
 z_index = 50
-position = Vector2(179, 7)
+position = Vector2(226, 50)
+scale = Vector2(0.9, 0.9)
 
-[node name="cash_out" parent="CanvasLayer/EOR_popup/Pop-up" index="6"]
-offset_left = 27.0
-offset_top = 13.0
-offset_right = 695.0
-offset_bottom = 121.0
+[node name="CardSlots" parent="." instance=ExtResource("12_tpqse")]
+position = Vector2(330, 10)
+scale = Vector2(1.15, 1.15)
 
 [connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/EOR_popup/Pop-up/cash_out" to="." method="_on_cash_out_pressed"]
-
-[editable path="CanvasLayer/EOR_popup"]

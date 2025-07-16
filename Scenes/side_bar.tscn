@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dly6ums2vd1lr"]
+[gd_scene load_steps=4 format=3 uid="uid://dly6ums2vd1lr"]
 
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="1_3mm4w"]
 [ext_resource type="StyleBox" uid="uid://cd3gq3x358a4d" path="res://UI/MenuStyleBox.tres" id="1_4fv1s"]
+[ext_resource type="Script" uid="uid://b0sirdwle4s8a" path="res://Scenes/side_bar.gd" id="1_dyaw2"]
 
 [node name="SideBar" type="Node2D"]
+script = ExtResource("1_dyaw2")
 
 [node name="SideBar" type="Panel" parent="."]
 offset_left = 2.0

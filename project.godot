@@ -18,3 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalManager="*res://Scripts/Global_manager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"

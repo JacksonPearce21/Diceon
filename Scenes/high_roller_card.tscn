@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsy7ux0uj3ivl"]
+
+[ext_resource type="Texture2D" uid="uid://dkk8hhyf1rsmx" path="res://Assets/PNG-cards-1.3/ace_of_spades2.png" id="1_gppua"]
+
+[node name="HighRollerCard" type="Node2D"]
+
+[node name="card1" type="Panel" parent="."]
+offset_right = 100.0
+offset_bottom = 130.0
+
+[node name="AceOfSpades2" type="Sprite2D" parent="."]
+position = Vector2(50, 65)
+scale = Vector2(0.2, 0.178)
+texture = ExtResource("1_gppua")

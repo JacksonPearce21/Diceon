@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bc00um7ocsvsq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 649.0
+offset_bottom = 136.0
+
+[node name="card_slot" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="card_slot2" type="Control" parent="Panel"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="card_slot3" type="Control" parent="Panel"]
+layout_mode = 1
+anchor_right = 0.172
+anchor_bottom = 0.5
+offset_right = -71.628
+offset_bottom = -28.0

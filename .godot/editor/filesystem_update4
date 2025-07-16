@@ -12,3 +12,7 @@ res://Scenes/shop.tscn
 res://Assets/casinotheme.tres
 res://Scenes/shop.gd
 res://Scripts/Global_manager.gd
+res://Scenes/card_slots.tscn
+res://Scenes/card_slots.gd
+res://Scenes/high_roller_card.tscn
+res://Scenes/side_bar.gd
