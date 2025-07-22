@@ -7,42 +7,41 @@
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="4_puylk"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="5_htmql"]
 
-[node name="HighRollerCard" type="Node2D"]
+[node name="HighRollerCard" type="Panel"]
 script = ExtResource("1_tu5xh")
 
-[node name="card1" type="Panel" parent="."]
+[node name="Card_texture" type="TextureRect" parent="."]
 offset_right = 100.0
 offset_bottom = 130.0
-
-[node name="AceOfSpades2" type="Sprite2D" parent="."]
-position = Vector2(50, 65)
-scale = Vector2(0.2, 0.178)
 texture = ExtResource("1_gppua")
+expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
+visible = false
 offset_left = 104.0
 offset_right = 228.0
 offset_bottom = 131.0
 
 [node name="Name" type="Label" parent="Discription_Box"]
 layout_mode = 0
-offset_left = 2.0
 offset_top = 4.0
-offset_right = 120.0
+offset_right = 124.0
 offset_bottom = 27.0
 theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
 theme_override_fonts/font = ExtResource("2_f5ra5")
 text = "HIGH ROLLER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Discription" type="Label" parent="Discription_Box"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 23.0
-offset_right = 123.0
-offset_bottom = 150.0
+offset_top = 21.0
+offset_right = 124.0
+offset_bottom = 131.0
 theme_override_font_sizes/font_size = 14
 text = "When Interger dice is 8, 9, 10 -  add 1, 2, 3 to the interger dice"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="cash_out" type="Button" parent="."]
