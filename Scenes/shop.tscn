@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwmlfrx8gkuic"]
+[gd_scene load_steps=11 format=3 uid="uid://bwmlfrx8gkuic"]
 
 [ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="1_a0mxf"]
 [ext_resource type="Script" uid="uid://dh5p4q0e85c4f" path="res://Scenes/shop.gd" id="1_s8dlv"]
@@ -9,6 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="6_ow1eo"]
 [ext_resource type="PackedScene" uid="uid://dly6ums2vd1lr" path="res://Scenes/side_bar.tscn" id="7_k6pkm"]
 [ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="9_tyrku"]
+[ext_resource type="PackedScene" uid="uid://dsy7ux0uj3ivl" path="res://Scenes/high_roller_card.tscn" id="10_5xp22"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_s8dlv")
@@ -84,5 +85,8 @@ offset_left = 613.0
 offset_top = 43.0
 offset_right = 713.0
 offset_bottom = 173.0
+
+[node name="HighRollerCard" parent="Bar" instance=ExtResource("10_5xp22")]
+position = Vector2(63, 48)
 
 [connection signal="pressed" from="shopping/Next_round" to="." method="_on_next_round_pressed"]

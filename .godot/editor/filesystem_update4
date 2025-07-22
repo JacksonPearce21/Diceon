@@ -16,3 +16,6 @@ res://Scenes/card_slots.tscn
 res://Scenes/card_slots.gd
 res://Scenes/high_roller_card.tscn
 res://Scenes/side_bar.gd
+res://Scripts/high_roller_card.gd
+res://CardManager.gd
+res://Scripts/CardManager.gd
