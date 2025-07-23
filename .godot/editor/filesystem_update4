@@ -1,7 +1,12 @@
-res://Scenes/high_roller_card.tscn
+res://Scenes/main_game.tscn
 res://Scripts/main_game.gd
 res://UI/MenuStyleBox.tres
 res://Assets/Button_style_box.tres
 res://Assets/Button_style_pressed.tres
-res://Scripts/CardManager.gd
 res://Scenes/shop.tscn
+res://Scenes/eor_popup.tscn
+res://Scenes/side_bar.tscn
+res://Scenes/int_dice.tscn
+res://Scenes/mult_dice.tscn
+res://Scenes/card_slots.tscn
+res://Scenes/high_roller_card.tscn
