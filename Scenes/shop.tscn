@@ -28,10 +28,10 @@ theme_override_styles/panel = ExtResource("2_ymrm4")
 
 [node name="Next_round" type="Button" parent="shopping"]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 12.0
-offset_right = 508.0
-offset_bottom = 115.0
+offset_left = 30.0
+offset_top = 15.0
+offset_right = 233.0
+offset_bottom = 118.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -52,41 +52,45 @@ theme_override_styles/normal_mirrored = ExtResource("4_tyrku")
 theme_override_styles/normal = ExtResource("4_tyrku")
 text = "Next Round"
 
+[node name="Bar" type="Panel" parent="shopping"]
+offset_left = 10.0
+offset_top = 125.0
+offset_right = 810.0
+offset_bottom = 425.0
+
+[node name="card1" type="Panel" parent="shopping/Bar"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 80.0
+offset_right = 167.0
+offset_bottom = 210.0
+
+[node name="HighRollerCard" parent="shopping/Bar/card1" instance=ExtResource("10_5xp22")]
+layout_mode = 0
+
+[node name="card2" type="Panel" parent="shopping/Bar"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 80.0
+offset_right = 450.0
+offset_bottom = 210.0
+
+[node name="HighRollerCard" parent="shopping/Bar/card2" instance=ExtResource("10_5xp22")]
+
+[node name="card3" type="Panel" parent="shopping/Bar"]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 80.0
+offset_right = 733.0
+offset_bottom = 210.0
+
+[node name="HighRollerCard" parent="shopping/Bar/card3" instance=ExtResource("10_5xp22")]
+
 [node name="SideBar" parent="." instance=ExtResource("7_k6pkm")]
 position = Vector2(20, 0)
 
 [node name="CardSlots" parent="." instance=ExtResource("9_tyrku")]
 position = Vector2(330, 10)
 scale = Vector2(1.15, 1.15)
-
-[node name="Bar" type="Panel" parent="."]
-offset_left = 342.0
-offset_top = 349.0
-offset_right = 1119.0
-offset_bottom = 637.0
-
-[node name="card1" type="Panel" parent="Bar"]
-layout_mode = 0
-offset_left = 63.0
-offset_top = 54.0
-offset_right = 163.0
-offset_bottom = 184.0
-
-[node name="card2" type="Panel" parent="Bar"]
-layout_mode = 0
-offset_left = 344.0
-offset_top = 54.0
-offset_right = 444.0
-offset_bottom = 184.0
-
-[node name="card3" type="Panel" parent="Bar"]
-layout_mode = 0
-offset_left = 613.0
-offset_top = 43.0
-offset_right = 713.0
-offset_bottom = 173.0
-
-[node name="HighRollerCard" parent="Bar" instance=ExtResource("10_5xp22")]
-position = Vector2(63, 48)
 
 [connection signal="pressed" from="shopping/Next_round" to="." method="_on_next_round_pressed"]
