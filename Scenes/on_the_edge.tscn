@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsy7ux0uj3ivl"]
+[gd_scene load_steps=7 format=3 uid="uid://cvjdbwroomn2x"]
 
-[ext_resource type="Texture2D" uid="uid://dkk8hhyf1rsmx" path="res://Assets/PNG-cards-1.3/ace_of_spades2.png" id="1_gppua"]
-[ext_resource type="Script" uid="uid://52amdubktoul" path="res://Scripts/high_roller_card.gd" id="1_tu5xh"]
-[ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="2_f5ra5"]
-[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="3_tu5xh"]
-[ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="4_puylk"]
-[ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="5_htmql"]
+[ext_resource type="Script" uid="uid://52amdubktoul" path="res://Scripts/high_roller_card.gd" id="1_xh4se"]
+[ext_resource type="Texture2D" uid="uid://dlayg2wpobjlh" path="res://Assets/PNG-cards-1.3/5_of_diamonds.png" id="2_bhjyq"]
+[ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="3_ugqpq"]
+[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="4_14e32"]
+[ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="5_vs16j"]
+[ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="6_u1pv2"]
 
-[node name="HighRollerCard" type="Button" groups=["cards"]]
+[node name="OnTheEdge" type="Button" groups=["cards"]]
 offset_right = 100.0
 offset_bottom = 130.0
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
@@ -15,13 +15,14 @@ theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-script = ExtResource("1_tu5xh")
+text = "-$0"
+script = ExtResource("1_xh4se")
 
 [node name="Card_texture" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 130.0
-texture = ExtResource("1_gppua")
+texture = ExtResource("2_bhjyq")
 expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
@@ -36,8 +37,8 @@ offset_top = 4.0
 offset_right = 124.0
 offset_bottom = 27.0
 theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
-theme_override_fonts/font = ExtResource("2_f5ra5")
-text = "HIGH ROLLER"
+theme_override_fonts/font = ExtResource("3_ugqpq")
+text = "On THE EDGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -46,9 +47,9 @@ layout_mode = 0
 offset_top = 21.0
 offset_right = 124.0
 offset_bottom = 131.0
-theme_override_fonts/font = ExtResource("2_f5ra5")
+theme_override_fonts/font = ExtResource("3_ugqpq")
 theme_override_font_sizes/font_size = 14
-text = "When Interger dice is 8, 9, 10 -  add 1, 2, 3 to the interger dice"
+text = "If 0 rolls are left at the end of a round, gain $5"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -66,17 +67,17 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_f5ra5")
+theme_override_fonts/font = ExtResource("3_ugqpq")
 theme_override_font_sizes/font_size = 15
-theme_override_styles/focus = ExtResource("3_tu5xh")
-theme_override_styles/hover_pressed_mirrored = ExtResource("4_puylk")
-theme_override_styles/hover_pressed = ExtResource("4_puylk")
-theme_override_styles/hover_mirrored = ExtResource("5_htmql")
-theme_override_styles/hover = ExtResource("5_htmql")
-theme_override_styles/pressed_mirrored = ExtResource("4_puylk")
-theme_override_styles/pressed = ExtResource("4_puylk")
-theme_override_styles/normal_mirrored = ExtResource("3_tu5xh")
-theme_override_styles/normal = ExtResource("3_tu5xh")
-text = "-$0"
+theme_override_styles/focus = ExtResource("4_14e32")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_vs16j")
+theme_override_styles/hover_pressed = ExtResource("5_vs16j")
+theme_override_styles/hover_mirrored = ExtResource("6_u1pv2")
+theme_override_styles/hover = ExtResource("6_u1pv2")
+theme_override_styles/pressed_mirrored = ExtResource("5_vs16j")
+theme_override_styles/pressed = ExtResource("5_vs16j")
+theme_override_styles/normal_mirrored = ExtResource("4_14e32")
+theme_override_styles/normal = ExtResource("4_14e32")
+text = "BUY"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

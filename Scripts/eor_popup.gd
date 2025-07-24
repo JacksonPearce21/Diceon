@@ -54,3 +54,7 @@ func _on_cash_out_pressed() -> void:
 	reset_labels()
 	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 	
+
+func _on_click_catcher_gui_input(event: InputEvent):
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().call_group("cards", "hide_description")	

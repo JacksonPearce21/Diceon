@@ -1,6 +1,7 @@
-Panel
-TextureRect
 Label
+Panel
+Button
+TextureRect
 Control
 Sprite2D
 PanelContainer
@@ -11,4 +12,3 @@ DirectionalLight2D
 Camera3D
 Node3D
 SubViewportContainer
-Button

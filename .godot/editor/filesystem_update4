@@ -10,3 +10,11 @@ res://Scenes/int_dice.tscn
 res://Scenes/mult_dice.tscn
 res://Scenes/card_slots.tscn
 res://Scenes/high_roller_card.tscn
+res://Scripts/high_roller_card.gd
+res://Scenes/shop.gd
+res://Scenes/card_slots.gd
+res://Scenes/side_bar.gd
+res://Scripts/eor_popup.gd
+res://Scenes/dealers_cut.tscn
+res://Scenes/on_the_edge.tscn
+res://Scenes/card_sharp.tscn

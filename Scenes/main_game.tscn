@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=14 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://c5am5xdlwbbvv" path="res://Scenes/eor_popup.tscn" id="10_r0mdn"]
 [ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="12_tpqse"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpqse"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="main_game" type="Node2D"]
 script = ExtResource("1_0e3vx")
 
@@ -25,6 +28,7 @@ scale = Vector2(0.384333, 0.329)
 texture = ExtResource("2_6j5ir")
 
 [node name="SideBar" parent="." instance=ExtResource("3_0xqxu")]
+z_index = 2
 position = Vector2(20, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -89,6 +93,29 @@ shadow_enabled = true
 shadow_bias = 0.5
 shadow_blur = 2.0
 
+[node name="MultiplySign" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(755, 302)
+scale = Vector2(0.115938, 0.104844)
+texture = ExtResource("5_mgc0q")
+
+[node name="Added_score" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 721.0
+offset_top = 117.0
+offset_right = 795.0
+offset_bottom = 159.0
+theme_override_fonts/font = ExtResource("4_18r40")
+theme_override_font_sizes/font_size = 30
+text = "+ 0"
+horizontal_alignment = 1
+
+[node name="ClickCatcher" type="Panel" parent="CanvasLayer"]
+offset_left = 146.0
+offset_top = 125.0
+offset_right = 1153.0
+offset_bottom = 602.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tpqse")
+
 [node name="Roll Dice" type="Button" parent="CanvasLayer"]
 offset_left = 658.0
 offset_top = 474.0
@@ -114,29 +141,15 @@ theme_override_styles/normal_mirrored = ExtResource("5_6y7pd")
 theme_override_styles/normal = ExtResource("5_6y7pd")
 text = "Roll Dice"
 
-[node name="MultiplySign" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(755, 302)
-scale = Vector2(0.115938, 0.104844)
-texture = ExtResource("5_mgc0q")
-
-[node name="Added_score" type="Label" parent="CanvasLayer"]
-visible = false
-offset_left = 721.0
-offset_top = 117.0
-offset_right = 795.0
-offset_bottom = 159.0
-theme_override_fonts/font = ExtResource("4_18r40")
-theme_override_font_sizes/font_size = 30
-text = "+ 0"
-horizontal_alignment = 1
-
-[node name="EOR_popup" parent="CanvasLayer" instance=ExtResource("10_r0mdn")]
-z_index = 50
-position = Vector2(226, 50)
-scale = Vector2(0.9, 0.9)
-
-[node name="CardSlots" parent="." instance=ExtResource("12_tpqse")]
-position = Vector2(330, 10)
+[node name="CardSlots" parent="CanvasLayer" instance=ExtResource("12_tpqse")]
+position = Vector2(330, -40)
 scale = Vector2(1.15, 1.15)
 
+[node name="EOR_popup" parent="CanvasLayer" instance=ExtResource("10_r0mdn")]
+visible = false
+z_index = 50
+position = Vector2(221, 99)
+scale = Vector2(0.9, 0.9)
+
+[connection signal="gui_input" from="CanvasLayer/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]

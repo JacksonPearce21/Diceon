@@ -69,3 +69,7 @@ func game_over():
 func _on_button_pressed():
 	$"CanvasLayer/Roll Dice".disabled = true
 	roll_all_dice()
+
+func _on_click_catcher_gui_input(event: InputEvent):
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().call_group("cards", "hide_description")	
