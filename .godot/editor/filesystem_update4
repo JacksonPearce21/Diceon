@@ -18,3 +18,8 @@ res://Scripts/eor_popup.gd
 res://Scenes/dealers_cut.tscn
 res://Scenes/on_the_edge.tscn
 res://Scenes/card_sharp.tscn
+res://Scripts/MultiplierDie.gd
+res://Scenes/dealers_cut.gd
+res://Scenes/on_the_edge.gd
+res://Scenes/card_sharp.gd
+res://Scripts/CardManager.gd

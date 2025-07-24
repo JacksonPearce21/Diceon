@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cvjdbwroomn2x"]
 
-[ext_resource type="Script" uid="uid://52amdubktoul" path="res://Scripts/high_roller_card.gd" id="1_xh4se"]
+[ext_resource type="Script" uid="uid://woxhdnamhk2s" path="res://Scenes/on_the_edge.gd" id="1_xh4se"]
 [ext_resource type="Texture2D" uid="uid://dlayg2wpobjlh" path="res://Assets/PNG-cards-1.3/5_of_diamonds.png" id="2_bhjyq"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="3_ugqpq"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="4_14e32"]
@@ -26,6 +26,7 @@ texture = ExtResource("2_bhjyq")
 expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
+z_index = 3
 layout_mode = 0
 offset_left = 104.0
 offset_right = 228.0
@@ -42,7 +43,7 @@ text = "On THE EDGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Discription" type="Label" parent="Discription_Box" groups=["cards"]]
+[node name="Discription" type="Label" parent="Discription_Box"]
 layout_mode = 0
 offset_top = 21.0
 offset_right = 124.0

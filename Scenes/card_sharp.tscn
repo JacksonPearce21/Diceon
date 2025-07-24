@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpul46s4ig5ep"]
 
-[ext_resource type="Script" uid="uid://52amdubktoul" path="res://Scripts/high_roller_card.gd" id="1_m21jd"]
+[ext_resource type="Script" uid="uid://dkqdt6pl6yh70" path="res://Scenes/card_sharp.gd" id="1_m21jd"]
 [ext_resource type="Texture2D" uid="uid://bil52epy3fcq7" path="res://Assets/PNG-cards-1.3/king_of_spades2.png" id="2_m21jd"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="3_ixmsr"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="4_xabc2"]
@@ -25,6 +25,7 @@ texture = ExtResource("2_m21jd")
 expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
+z_index = 3
 layout_mode = 0
 offset_left = 104.0
 offset_right = 228.0
@@ -41,7 +42,7 @@ text = "Card SHARP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Discription" type="Label" parent="Discription_Box" groups=["cards"]]
+[node name="Discription" type="Label" parent="Discription_Box"]
 layout_mode = 0
 offset_top = 21.0
 offset_right = 124.0

@@ -25,6 +25,7 @@ texture = ExtResource("1_gppua")
 expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
+z_index = 3
 layout_mode = 0
 offset_left = 104.0
 offset_right = 228.0
@@ -41,7 +42,7 @@ text = "HIGH ROLLER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Discription" type="Label" parent="Discription_Box" groups=["cards"]]
+[node name="Discription" type="Label" parent="Discription_Box"]
 layout_mode = 0
 offset_top = 21.0
 offset_right = 124.0

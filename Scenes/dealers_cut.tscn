@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://diewwg2q0c40e"]
 
-[ext_resource type="Script" uid="uid://52amdubktoul" path="res://Scripts/high_roller_card.gd" id="1_a51xl"]
+[ext_resource type="Script" uid="uid://csxda05f6segx" path="res://Scenes/dealers_cut.gd" id="1_a51xl"]
 [ext_resource type="Texture2D" uid="uid://lnrh34eex23h" path="res://Assets/PNG-cards-1.3/2_of_hearts.png" id="2_a51xl"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="3_gxl8k"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="4_qqjd1"]
@@ -25,6 +25,7 @@ texture = ExtResource("2_a51xl")
 expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
+z_index = 3
 layout_mode = 0
 offset_left = 104.0
 offset_right = 228.0
