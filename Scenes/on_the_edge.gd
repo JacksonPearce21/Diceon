@@ -2,7 +2,7 @@ extends Button
 
 var card_price = 5
 @onready var description_box = $Discription_Box
-@onready var buy_btn = $Buy_btn
+@onready var buy_btn = $Discription_Box/Buy_btn
 
 func _ready():
 	add_to_group("Card")
@@ -22,7 +22,6 @@ func _on_pressed():
 func buy():
 	if GlobalManager.money >= card_price:
 		GlobalManager.money -= card_price
-		CardManager.add_card(self)
 		print("Card bought:", self.name)
 	else:
 		print("Not enough money!")

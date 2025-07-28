@@ -1,7 +1,14 @@
 extends Panel
 
+
 func _ready():
 	GlobalManager.shopping = true
+	CardManager.shop_slots = [
+		$shopping/Bar/card1/Card,
+		$shopping/Bar/card2/Card,
+		$shopping/Bar/card3/Card
+	]
+	CardManager.populate_shop()
 	pass
 
 func _on_next_round_pressed() -> void:

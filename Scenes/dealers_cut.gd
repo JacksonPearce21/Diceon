@@ -22,7 +22,6 @@ func _on_pressed():
 func buy():
 	if GlobalManager.money >= card_price:
 		GlobalManager.money -= card_price
-		CardManager.add_card(self)
 		print("Card bought:", self.name)
 	else:
 		print("Not enough money!")

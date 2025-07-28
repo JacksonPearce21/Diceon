@@ -6,6 +6,7 @@ var card_price = 10
 
 func _ready():
 	add_to_group("Card")
+
 	hide_description()
 	buy_btn.text = "-$" + str(card_price)
 
@@ -22,7 +23,6 @@ func _on_pressed():
 func buy():
 	if GlobalManager.money >= card_price:
 		GlobalManager.money -= card_price
-		CardManager.add_card(self)
 		print("Card bought:", self.name)
 	else:
 		print("Not enough money!")
