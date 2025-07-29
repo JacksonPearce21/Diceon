@@ -93,6 +93,7 @@ text = "$"
 horizontal_alignment = 1
 
 [node name="ClickCatcher" type="Panel" parent="Pop-up"]
+layout_mode = 0
 offset_top = 1.0
 offset_right = 721.0
 offset_bottom = 545.0

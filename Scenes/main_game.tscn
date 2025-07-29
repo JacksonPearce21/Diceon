@@ -99,11 +99,10 @@ scale = Vector2(0.115938, 0.104844)
 texture = ExtResource("5_mgc0q")
 
 [node name="Added_score" type="Label" parent="CanvasLayer"]
-visible = false
-offset_left = 721.0
-offset_top = 117.0
-offset_right = 795.0
-offset_bottom = 159.0
+offset_left = 719.0
+offset_top = 126.0
+offset_right = 793.0
+offset_bottom = 168.0
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 30
 text = "+ 0"
@@ -146,7 +145,6 @@ position = Vector2(330, -40)
 scale = Vector2(1.15, 1.15)
 
 [node name="ClickCatcher" parent="CanvasLayer/CardSlots/Bar" index="0"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 674.0
