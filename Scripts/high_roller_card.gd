@@ -1,15 +1,24 @@
 extends Button
 
-var card_price = 5
+var card_price = 7
 @onready var description_box = $Discription_Box
 @onready var buy_btn = $Discription_Box/Buy_btn
+@onready var effect_panel = $Panel
+@onready var effect_label = $Panel/Effect
 var card_scene = "res://Scenes/high_roller_card.tscn"
-
 
 func _ready():
 	add_to_group("Card")
 	hide_description()
 	buy_btn.text = "-$" + str(card_price)
+	effect_panel.hide()
+
+func _process(delta):
+	if CardEffects.show_high_roller_effect:
+		effect_label.text = CardEffects.high_roller_label
+		effect_panel.show()
+	else:
+		effect_panel.hide()
 
 func show_description():
 	description_box.show()

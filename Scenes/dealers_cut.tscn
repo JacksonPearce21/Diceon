@@ -47,6 +47,7 @@ layout_mode = 0
 offset_top = 21.0
 offset_right = 124.0
 offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("3_gxl8k")
 theme_override_font_sizes/font_size = 14
 text = "Adds +1 to your lowest die face"
 horizontal_alignment = 1
@@ -78,6 +79,22 @@ theme_override_styles/pressed = ExtResource("5_d3f0i")
 theme_override_styles/normal_mirrored = ExtResource("4_qqjd1")
 theme_override_styles/normal = ExtResource("4_qqjd1")
 text = "-$0"
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 134.0
+offset_right = 101.0
+offset_bottom = 174.0
+
+[node name="Effect" type="Label" parent="Panel"]
+offset_left = -1.0
+offset_top = 9.0
+offset_right = 102.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.278076, 0.751876, 1, 1)
+theme_override_fonts/font = ExtResource("3_gxl8k")
+text = "+1 to _"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="Discription_Box/Buy_btn" to="." method="_on_buy_btn_pressed"]

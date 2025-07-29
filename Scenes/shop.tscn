@@ -100,7 +100,6 @@ position = Vector2(330, 10)
 scale = Vector2(1.15, 1.15)
 
 [node name="ClickCatcher" parent="CardSlots/Bar" index="0"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 674.0

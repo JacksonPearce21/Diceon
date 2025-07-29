@@ -13,3 +13,9 @@ res://Scenes/high_roller_card.tscn
 res://Scenes/card_sharp.tscn
 res://Scenes/dealers_cut.tscn
 res://Scenes/on_the_edge.tscn
+res://Scripts/high_roller_card.gd
+res://Scenes/on_the_edge.gd
+res://Card_effects.gd
+res://Scenes/card_sharp.gd
+res://Scenes/dealers_cut.gd
+res://Scripts/Global_manager.gd

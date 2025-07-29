@@ -1,5 +1,8 @@
 extends Node2D
 
+
+@onready var int_label = $CanvasLayer/int_label
+@onready var mult_label = $CanvasLayer/mult_label
 @onready var int_dice = $CanvasLayer/SubViewportContainer/IntViewport/interger_die
 @onready var mult_dice = $CanvasLayer/SubViewportContainer2/MultViewport/multiplier_die
 @onready var added_score_label = $CanvasLayer/Added_score
@@ -9,6 +12,9 @@ extends Node2D
 @onready var round_num_label = $SideBar/SideBar/Round_num
 @onready var EOR_popup = $CanvasLayer/EOR_popup
 @onready var money_label = $SideBar/SideBar/Money
+var base
+var mult
+
 var round_score = 0
 
 func _ready():
@@ -27,6 +33,10 @@ func update_labels():
 	required_score_label.text = str(GlobalManager.score_needed)
 	score_label.text = str(round_score)
 	money_label.text = "$" + str(GlobalManager.money)
+	CardEffects.high_roller_int = 0
+	CardEffects.dealers_int = 0
+	CardEffects.dealers_mult = 0
+	CardEffects.hide_labels()
 
 func roll_all_dice():
 	GlobalManager.decrease_roll()
@@ -35,23 +45,55 @@ func roll_all_dice():
 	mult_dice.roll()
 	await get_tree().create_timer(1.9).timeout
 	calculate_score()
-	await get_tree().create_timer(0.5).timeout
-	check_game_status()
-	$"CanvasLayer/Roll Dice".disabled = false
 
 func calculate_score():
-	var base = int_dice.current_face_value
-	var mult = mult_dice.current_face_value
+	base = int_dice.current_face_value
+	int_label.text = "+ " + str(base)
+	mult = mult_dice.current_face_value
+	mult_label.text = "+ " + str(mult)
+	int_label.show()
+	mult_label.show()
+	check_for_cards()
+
+func check_for_cards():
+	if CardManager.current_cards.has(preload("res://Scenes/dealers_cut.tscn")):
+		CardEffects.dealers_cut(base, mult)
+		if CardEffects.dealers_int != 0:
+			await get_tree().create_timer(1).timeout
+			base = CardEffects.dealers_int
+			int_label.text = "+ " + str(base)
+		elif CardEffects.dealers_mult != 0:
+			await get_tree().create_timer(1).timeout
+			mult = CardEffects.dealers_mult
+			mult_label.text = "+ " + str(mult)
+	
+	if CardManager.current_cards.has(preload("res://Scenes/high_roller_card.tscn")):
+		CardEffects.high_roller(base)
+		if CardEffects.high_roller_int != 0:
+			await get_tree().create_timer(1).timeout
+			base = CardEffects.high_roller_int
+			int_label.text = "+ " + str(base)
+
+	final_calc()
+	
+func final_calc():
 	var total = base * mult
 	added_score_label.text = "+ " + str(total)
 	added_score_ani()
 	round_score += total
 	update_labels()
+	await get_tree().create_timer(1).timeout
+	check_game_status()
+	$"CanvasLayer/Roll Dice".disabled = false
 	
+
 func added_score_ani():
 	added_score_label.show()
 	await get_tree().create_timer(0.9).timeout
+	int_label.hide()
+	mult_label.hide()
 	added_score_label.hide()
+	
 
 func check_game_status():
 	if GlobalManager.score_needed <= round_score:
