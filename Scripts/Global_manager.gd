@@ -9,6 +9,7 @@ var interest_value = 0
 var win_money = 4
 var round_status = false
 var shopping = false
+var game_start = true
 
 func next_round():
 	interest = 0

@@ -1,7 +1,11 @@
 extends Node
 
 @onready var shop_slots = []
-@onready var card_slots = []
+var card_slots: Array = []
+var card_path
+var instanceable_card
+var current_card
+var card_instance
 
 var all_cards = [
 	preload("res://Scenes/high_roller_card.tscn"),
@@ -28,17 +32,22 @@ func clear_children(node):
 
 var current_cards: Array = []
 
-func card_bought(card):
-	current_cards.append(card.scene_file_path)
+func load_cards_into_slots():
+	if card_slots.is_empty() or current_cards.is_empty():
+		return
+	for i in current_cards.size():
+		if i >= card_slots.size():
+			break
+		var card_data = current_cards[i]
+		card_instance = card_data.instantiate()
+		card_slots[i].add_child(card_instance)
+		card_instance.disable_shop_features()
 
-var current_card
+func card_bought(card):
+	instanceable_card = load(card.scene_file_path)
+	current_cards.append(instanceable_card)
+	load_cards_into_slots()
 
 func select_card(card):
 	current_card = card
 	card.show_description()
-	
-func add_to_slot():
-	pass
-	
-func add_card():
-	pass

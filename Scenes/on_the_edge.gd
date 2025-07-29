@@ -3,6 +3,8 @@ extends Button
 var card_price = 5
 @onready var description_box = $Discription_Box
 @onready var buy_btn = $Discription_Box/Buy_btn
+var card_scene = "res://Scenes/on_the_edge.tscn"
+
 
 func _ready():
 	add_to_group("Card")
@@ -22,12 +24,10 @@ func _on_pressed():
 func _on_buy_btn_pressed():
 	if GlobalManager.money >= card_price:
 		GlobalManager.money -= card_price
-		print("Card bought:", self.name)
+		get_parent().remove_child(self)
+		CardManager.card_bought(self)
 	else:
-		print("Not enough money!")
+		pass
 
-	for slot in CardManager.card_slots:
-		if slot.get_child_count() == 0:
-			get_parent().remove_child(self)
-			slot.add_child(self)
-			break
+func disable_shop_features():
+	$Discription_Box/Buy_btn.visible = false
