@@ -23,3 +23,5 @@ res://Scenes/dealers_cut.gd
 res://Scenes/on_the_edge.gd
 res://Scenes/card_sharp.gd
 res://Scripts/CardManager.gd
+res://Card.gd
+res://Scripts/Global_manager.gd

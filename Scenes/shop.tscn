@@ -55,11 +55,6 @@ offset_top = 80.0
 offset_right = 125.0
 offset_bottom = 210.0
 
-[node name="Card" type="Panel" parent="shopping/Bar/card1"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="card2" type="Panel" parent="shopping/Bar"]
 layout_mode = 0
 offset_left = 270.0
@@ -67,22 +62,12 @@ offset_top = 80.0
 offset_right = 370.0
 offset_bottom = 210.0
 
-[node name="Card" type="Panel" parent="shopping/Bar/card2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="card3" type="Panel" parent="shopping/Bar"]
 layout_mode = 0
 offset_left = 520.0
 offset_top = 80.0
 offset_right = 620.0
 offset_bottom = 210.0
-
-[node name="Card" type="Panel" parent="shopping/Bar/card3"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Next_round" type="Button" parent="shopping"]
 layout_mode = 0
@@ -114,5 +99,26 @@ text = "Next Round"
 position = Vector2(330, 10)
 scale = Vector2(1.15, 1.15)
 
+[node name="ClickCatcher" parent="CardSlots/Bar" index="0"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 674.0
+offset_bottom = 72.0
+
+[node name="card_slot2" parent="CardSlots/Bar" index="2"]
+z_index = 0
+
+[node name="card_slot3" parent="CardSlots/Bar" index="3"]
+z_index = 0
+
+[node name="card_slot4" parent="CardSlots/Bar" index="4"]
+z_index = 0
+
+[node name="card_slot5" parent="CardSlots/Bar" index="5"]
+z_index = 0
+
 [connection signal="gui_input" from="shopping/Bar/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="shopping/Next_round" to="." method="_on_next_round_pressed"]
+
+[editable path="CardSlots"]

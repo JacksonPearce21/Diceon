@@ -4,9 +4,9 @@ extends Panel
 func _ready():
 	GlobalManager.shopping = true
 	CardManager.shop_slots = [
-		$shopping/Bar/card1/Card,
-		$shopping/Bar/card2/Card,
-		$shopping/Bar/card3/Card
+		$shopping/Bar/card1,
+		$shopping/Bar/card2,
+		$shopping/Bar/card3
 	]
 	CardManager.populate_shop()
 	pass
