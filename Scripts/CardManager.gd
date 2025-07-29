@@ -33,13 +33,8 @@ func clear_children(node):
 var current_cards: Array = []
 
 func load_cards_into_slots():
-	if card_slots.is_empty() or current_cards.is_empty():
-		return
 	for i in current_cards.size():
-		if i >= card_slots.size():
-			break
-		var card_data = current_cards[i]
-		card_instance = card_data.instantiate()
+		card_instance = current_cards[i].instantiate()
 		card_slots[i].add_child(card_instance)
 		card_instance.disable_shop_features()
 

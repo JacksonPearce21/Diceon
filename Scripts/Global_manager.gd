@@ -2,7 +2,7 @@ extends Node
 
 var dice_rolls = 4
 var current_round = 0
-var score_needed = 50
+var score_needed = 40
 var money = 4
 var interest = 0
 var interest_value = 0

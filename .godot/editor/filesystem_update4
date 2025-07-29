@@ -19,3 +19,5 @@ res://Card_effects.gd
 res://Scenes/card_sharp.gd
 res://Scenes/dealers_cut.gd
 res://Scripts/Global_manager.gd
+res://Scenes/card_slots.gd
+res://Scripts/CardManager.gd
