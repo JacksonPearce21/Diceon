@@ -33,9 +33,7 @@ func update_labels():
 	required_score_label.text = str(GlobalManager.score_needed)
 	score_label.text = str(round_score)
 	money_label.text = "$" + str(GlobalManager.money)
-	CardEffects.high_roller_int = 0
-	CardEffects.dealers_int = 0
-	CardEffects.dealers_mult = 0
+	CardEffects.reset_variables()
 	CardEffects.hide_labels()
 
 func roll_all_dice():
@@ -73,7 +71,6 @@ func check_for_cards():
 			await get_tree().create_timer(1).timeout
 			base = CardEffects.high_roller_int
 			int_label.text = "+ " + str(base)
-
 	final_calc()
 	
 func final_calc():

@@ -1,8 +1,9 @@
 res://Scenes/main_game.tscn
 res://Assets/Button_style_box.tres
 res://Assets/Button_style_pressed.tres
-res://UI/MenuStyleBox.tres
 res://Scripts/main_game.gd
+res://UI/MenuStyleBox.tres
+res://Card_effects.gd
 res://Scenes/shop.tscn
 res://Scenes/eor_popup.tscn
 res://Scenes/side_bar.tscn
@@ -10,14 +11,6 @@ res://Scenes/int_dice.tscn
 res://Scenes/mult_dice.tscn
 res://Scenes/card_slots.tscn
 res://Scenes/high_roller_card.tscn
-res://Scenes/card_sharp.tscn
 res://Scenes/dealers_cut.tscn
+res://Scenes/card_sharp.tscn
 res://Scenes/on_the_edge.tscn
-res://Scripts/high_roller_card.gd
-res://Scenes/on_the_edge.gd
-res://Card_effects.gd
-res://Scenes/card_sharp.gd
-res://Scenes/dealers_cut.gd
-res://Scripts/Global_manager.gd
-res://Scenes/card_slots.gd
-res://Scripts/CardManager.gd

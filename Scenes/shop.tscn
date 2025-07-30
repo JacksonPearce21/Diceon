@@ -95,6 +95,17 @@ theme_override_styles/normal_mirrored = ExtResource("4_tyrku")
 theme_override_styles/normal = ExtResource("4_tyrku")
 text = "Next Round"
 
+[node name="Label" type="Label" parent="shopping"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 19.0
+offset_right = 525.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
+theme_override_fonts/font = ExtResource("3_s8dlv")
+theme_override_font_sizes/font_size = 75
+text = "SHOP"
+
 [node name="CardSlots" parent="." instance=ExtResource("9_tyrku")]
 position = Vector2(330, 10)
 scale = Vector2(1.15, 1.15)

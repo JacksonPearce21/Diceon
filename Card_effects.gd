@@ -1,14 +1,18 @@
 extends Node
 
-var high_roller_int = 0
-var dealers_int = 0
-var dealers_mult = 0
+var high_roller_int
+var dealers_int
+var dealers_mult
 var high_roller_label = ""
 var dealers_cut_label = ""
-var show_on_the_edge_effect = false
-var show_dealers_cut_effect = false
-var show_high_roller_effect = false
-var show_card_sharp_effect = false
+var show_on_the_edge_effect
+var show_dealers_cut_effect
+var show_high_roller_effect 
+var show_card_sharp_effect 
+
+func _ready():
+	hide_labels()
+	reset_variables()
 
 func high_roller(base_int):
 	if base_int == 8:
@@ -35,8 +39,16 @@ func dealers_cut(base_int, base_mult):
 	
 	
 func hide_labels():
+	high_roller_label = ""
+	dealers_cut_label = ""
 	show_on_the_edge_effect = false
 	show_dealers_cut_effect = false
 	show_high_roller_effect = false
 	show_card_sharp_effect = false
+	
+func reset_variables():
+	high_roller_int = 0
+	dealers_int = 0
+	dealers_mult = 0
+	
 	
