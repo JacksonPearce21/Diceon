@@ -5,12 +5,13 @@ extends Node2D
 @onready var mult_label = $CanvasLayer/mult_label
 @onready var int_dice = $CanvasLayer/SubViewportContainer/IntViewport/interger_die
 @onready var mult_dice = $CanvasLayer/SubViewportContainer2/MultViewport/multiplier_die
+@onready var roll_dice = $"Roll Dice"
 @onready var added_score_label = $CanvasLayer/Added_score
 @onready var score_label = $SideBar/SideBar/Score
 @onready var rolls_label = $SideBar/SideBar/Rolls
 @onready var required_score_label = $SideBar/SideBar/Required_score
 @onready var round_num_label = $SideBar/SideBar/Round_num
-@onready var EOR_popup = $CanvasLayer/EOR_popup
+@onready var EOR_popup = $EOR_popup
 @onready var money_label = $SideBar/SideBar/Money
 var base
 var mult
@@ -81,7 +82,7 @@ func final_calc():
 	update_labels()
 	await get_tree().create_timer(1).timeout
 	check_game_status()
-	$"CanvasLayer/Roll Dice".disabled = false
+	roll_dice.disabled = false
 	
 
 func added_score_ani():
@@ -106,7 +107,7 @@ func game_over():
 	get_tree().quit()
 
 func _on_button_pressed():
-	$"CanvasLayer/Roll Dice".disabled = true
+	roll_dice.disabled = true
 	roll_all_dice()
 
 func _on_click_catcher_gui_input(event: InputEvent):

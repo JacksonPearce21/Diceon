@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="1_2e1hu"]
 [ext_resource type="Script" uid="uid://cr1omxfymrqbh" path="res://Scripts/eor_popup.gd" id="1_dayh2"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="2_dayh2"]
-[ext_resource type="StyleBox" uid="uid://cd3gq3x358a4d" path="res://UI/MenuStyleBox.tres" id="2_fpj8r"]
+[ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="2_fpj8r"]
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="3_fpj8r"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="4_ewfj4"]
 
@@ -14,18 +14,16 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 script = ExtResource("1_dayh2")
 
 [node name="Pop-up" type="Panel" parent="."]
-offset_left = 193.0
-offset_top = 111.0
-offset_right = 912.0
-offset_bottom = 658.0
-theme_override_styles/panel = ExtResource("2_fpj8r")
+offset_right = 712.0
+offset_bottom = 502.0
+theme = ExtResource("2_fpj8r")
 
 [node name="Win_text" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 471.0
-offset_top = 179.0
-offset_right = 576.0
-offset_bottom = 221.0
+offset_left = 123.0
+offset_top = 223.0
+offset_right = 228.0
+offset_bottom = 265.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
@@ -34,10 +32,10 @@ horizontal_alignment = 1
 
 [node name="Win_money" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 442.0
-offset_top = 225.0
-offset_right = 599.0
-offset_bottom = 267.0
+offset_left = 239.0
+offset_top = 229.0
+offset_right = 396.0
+offset_bottom = 271.0
 theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
 theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
@@ -58,10 +56,10 @@ horizontal_alignment = 1
 
 [node name="Rolls_left" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 161.0
-offset_top = 221.0
-offset_right = 196.0
-offset_bottom = 263.0
+offset_left = 300.0
+offset_top = 174.0
+offset_right = 335.0
+offset_bottom = 216.0
 theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
 theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
@@ -70,10 +68,10 @@ horizontal_alignment = 1
 
 [node name="Interest_text" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 230.0
-offset_top = 346.0
-offset_right = 488.0
-offset_bottom = 388.0
+offset_left = 51.0
+offset_top = 275.0
+offset_right = 309.0
+offset_bottom = 317.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
@@ -82,10 +80,10 @@ horizontal_alignment = 1
 
 [node name="Interest" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 228.0
-offset_top = 396.0
-offset_right = 486.0
-offset_bottom = 438.0
+offset_left = 189.0
+offset_top = 277.0
+offset_right = 447.0
+offset_bottom = 319.0
 theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
 theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
@@ -96,15 +94,15 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_top = 1.0
 offset_right = 721.0
-offset_bottom = 545.0
+offset_bottom = 506.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpj8r")
 
 [node name="cash_out" type="Button" parent="Pop-up"]
 layout_mode = 0
-offset_left = 25.0
+offset_left = 81.0
 offset_top = 21.0
-offset_right = 693.0
-offset_bottom = 129.0
+offset_right = 631.0
+offset_bottom = 121.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)

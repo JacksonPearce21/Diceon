@@ -123,19 +123,6 @@ scale = Vector2(1.15, 1.15)
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 674.0
-offset_bottom = 72.0
-
-[node name="card_slot2" parent="CardSlots/Bar" index="2"]
-z_index = 0
-
-[node name="card_slot3" parent="CardSlots/Bar" index="3"]
-z_index = 0
-
-[node name="card_slot4" parent="CardSlots/Bar" index="4"]
-z_index = 0
-
-[node name="card_slot5" parent="CardSlots/Bar" index="5"]
-z_index = 0
 
 [connection signal="gui_input" from="shopping/Bar/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="shopping/Next_round" to="." method="_on_next_round_pressed"]

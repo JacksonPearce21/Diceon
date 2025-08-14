@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3lenq48oro1j"]
+[gd_scene load_steps=5 format=3 uid="uid://b3lenq48oro1j"]
 
 [ext_resource type="Script" uid="uid://dj8q5piyd6def" path="res://Scenes/card_slots.gd" id="1_hvror"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="2_1gett"]
+[ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="2_13qok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qok"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -10,15 +11,16 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 script = ExtResource("1_hvror")
 
 [node name="Bar" type="Panel" parent="."]
-offset_right = 680.0
+offset_right = 712.0
 offset_bottom = 150.0
+theme = ExtResource("2_13qok")
 
 [node name="ClickCatcher" type="Panel" parent="Bar"]
 layout_mode = 0
-offset_left = -238.0
-offset_top = -4.0
-offset_right = 436.0
-offset_bottom = 68.0
+offset_left = -240.0
+offset_top = 3.05176e-05
+offset_right = 434.0
+offset_bottom = 72.0
 scale = Vector2(1.7648, 2.12319)
 theme_override_styles/panel = SubResource("StyleBoxFlat_13qok")
 
@@ -30,42 +32,38 @@ offset_right = 150.0
 offset_bottom = 140.0
 
 [node name="card_slot2" type="Panel" parent="Bar"]
-z_index = -1
 layout_mode = 0
-offset_left = 170.0
+offset_left = 179.0
 offset_top = 10.0
-offset_right = 270.0
+offset_right = 279.0
 offset_bottom = 140.0
 
 [node name="card_slot3" type="Panel" parent="Bar"]
-z_index = -1
 layout_mode = 0
-offset_left = 290.0
+offset_left = 305.0
 offset_top = 10.0
-offset_right = 390.0
+offset_right = 405.0
 offset_bottom = 140.0
 
 [node name="card_slot4" type="Panel" parent="Bar"]
-z_index = -1
 layout_mode = 0
-offset_left = 410.0
+offset_left = 430.0
 offset_top = 10.0
-offset_right = 510.0
+offset_right = 530.0
 offset_bottom = 140.0
 
 [node name="card_slot5" type="Panel" parent="Bar"]
-z_index = -1
 layout_mode = 0
-offset_left = 530.0
+offset_left = 562.0
 offset_top = 10.0
-offset_right = 630.0
+offset_right = 662.0
 offset_bottom = 140.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 650.0
-offset_top = 130.0
-offset_right = 679.0
-offset_bottom = 153.0
+offset_left = 676.0
+offset_top = 127.0
+offset_right = 705.0
+offset_bottom = 150.0
 theme_override_fonts/font = ExtResource("2_1gett")
 text = "0/5"
 

@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=15 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
 [ext_resource type="PackedScene" uid="uid://bpixuutkjt0je" path="res://Scenes/mult_dice.tscn" id="2_0e3vx"]
-[ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="2_6j5ir"]
 [ext_resource type="PackedScene" uid="uid://dly6ums2vd1lr" path="res://Scenes/side_bar.tscn" id="3_0xqxu"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="4_18r40"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="5_6y7pd"]
 [ext_resource type="Texture2D" uid="uid://dkqgtce5dbq8m" path="res://Assets/Multiplication_Sign.svg.png" id="5_mgc0q"]
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="6_73nn6"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="7_r0mdn"]
+[ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="10_c78sm"]
 [ext_resource type="PackedScene" uid="uid://c5am5xdlwbbvv" path="res://Scenes/eor_popup.tscn" id="10_r0mdn"]
 [ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="12_tpqse"]
+[ext_resource type="Texture2D" uid="uid://1nrym0k7sd44" path="res://Assets/gradient.png" id="13_c78sm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpqse"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -19,24 +20,16 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="main_game" type="Node2D"]
 script = ExtResource("1_0e3vx")
 
-[node name="Backround" type="Sprite2D" parent="."]
-position = Vector2(576.5, 320)
-scale = Vector2(0.384333, 0.329)
-texture = ExtResource("2_6j5ir")
-
-[node name="SideBar" parent="." instance=ExtResource("3_0xqxu")]
-z_index = 2
-position = Vector2(20, 0)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-offset = Vector2(0, 100)
-transform = Transform2D(1, 0, 0, 1, 0, 100)
+layer = -1
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_left = 100.0
-offset_top = -142.0
-offset_right = 612.0
-offset_bottom = 370.0
+offset_left = -628.0
+offset_top = -445.385
+offset_right = -116.0
+offset_bottom = 66.615
 scale = Vector2(1.7, 1.7)
 
 [node name="IntViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
@@ -74,10 +67,10 @@ text = "+0"
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.035
-offset_left = 692.0
-offset_top = 49.0
-offset_right = 1163.68
-offset_bottom = 561.0
+offset_left = -35.0
+offset_top = -253.385
+offset_right = 436.68
+offset_bottom = 258.615
 
 [node name="MultViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer2"]
 transparent_bg = true
@@ -113,7 +106,7 @@ theme_override_font_sizes/font_size = 25
 text = "+0"
 
 [node name="MultiplySign" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(755, 302)
+position = Vector2(9, 1.61505)
 scale = Vector2(0.115938, 0.104844)
 texture = ExtResource("5_mgc0q")
 
@@ -129,17 +122,43 @@ text = "+ 0"
 horizontal_alignment = 1
 
 [node name="ClickCatcher" type="Panel" parent="CanvasLayer"]
-offset_left = 146.0
-offset_top = 125.0
-offset_right = 1153.0
-offset_bottom = 602.0
+offset_left = -375.0
+offset_top = -171.0
+offset_right = 408.0
+offset_bottom = 325.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpqse")
 
-[node name="Roll Dice" type="Button" parent="CanvasLayer"]
-offset_left = 661.0
-offset_top = 429.0
-offset_right = 843.0
-offset_bottom = 537.0
+[node name="Gradient" type="Sprite2D" parent="CanvasLayer"]
+z_index = -1
+position = Vector2(0.499989, 13.5)
+scale = Vector2(0.463125, 0.346464)
+texture = ExtResource("13_c78sm")
+
+[node name="CardSlots" parent="." instance=ExtResource("12_tpqse")]
+position = Vector2(220, 0)
+
+[node name="SideBar" parent="." instance=ExtResource("3_0xqxu")]
+z_index = 2
+position = Vector2(-1, -2)
+
+[node name="EOR_popup" parent="." instance=ExtResource("10_r0mdn")]
+visible = false
+z_index = 50
+position = Vector2(220, 150)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = 528.0
+offset_right = 1154.0
+offset_bottom = 648.0
+theme = ExtResource("10_c78sm")
+
+[node name="Roll Dice" type="Button" parent="."]
+z_index = 1
+offset_left = 742.0
+offset_top = 534.0
+offset_right = 924.0
+offset_bottom = 642.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -160,35 +179,9 @@ theme_override_styles/normal_mirrored = ExtResource("5_6y7pd")
 theme_override_styles/normal = ExtResource("5_6y7pd")
 text = "Roll Dice"
 
-[node name="CardSlots" parent="CanvasLayer" instance=ExtResource("12_tpqse")]
-position = Vector2(330, -90)
-scale = Vector2(1.15, 1.15)
-
-[node name="ClickCatcher" parent="CanvasLayer/CardSlots/Bar" index="0"]
-offset_left = -159.0
-offset_top = -39.0
-offset_right = 415.0
-offset_bottom = 65.0
-
-[node name="card_slot2" parent="CanvasLayer/CardSlots/Bar" index="2"]
-z_index = 0
-
-[node name="card_slot3" parent="CanvasLayer/CardSlots/Bar" index="3"]
-z_index = 0
-
-[node name="card_slot4" parent="CanvasLayer/CardSlots/Bar" index="4"]
-z_index = 0
-
-[node name="card_slot5" parent="CanvasLayer/CardSlots/Bar" index="5"]
-z_index = 0
-
-[node name="EOR_popup" parent="CanvasLayer" instance=ExtResource("10_r0mdn")]
-visible = false
-z_index = 50
-position = Vector2(214, -12)
-scale = Vector2(0.9, 0.9)
+[node name="SideBar2" parent="." instance=ExtResource("3_0xqxu")]
+z_index = 2
+position = Vector2(931, -2)
 
 [connection signal="gui_input" from="CanvasLayer/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
-[connection signal="pressed" from="CanvasLayer/Roll Dice" to="." method="_on_button_pressed"]
-
-[editable path="CanvasLayer/CardSlots"]
+[connection signal="pressed" from="Roll Dice" to="." method="_on_button_pressed"]
