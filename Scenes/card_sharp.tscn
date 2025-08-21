@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpul46s4ig5ep"]
+[gd_scene load_steps=8 format=3 uid="uid://cpul46s4ig5ep"]
 
+[ext_resource type="Theme" uid="uid://d27dsxdcf0ldf" path="res://Card_theme.tres" id="1_2oel6"]
 [ext_resource type="Script" uid="uid://dkqdt6pl6yh70" path="res://Scenes/card_sharp.gd" id="1_m21jd"]
 [ext_resource type="Texture2D" uid="uid://bil52epy3fcq7" path="res://Assets/PNG-cards-1.3/king_of_spades2.png" id="2_m21jd"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="3_ixmsr"]
@@ -10,6 +11,7 @@
 [node name="CardSharp" type="Button" groups=["cards"]]
 offset_right = 100.0
 offset_bottom = 130.0
+theme = ExtResource("1_2oel6")
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)

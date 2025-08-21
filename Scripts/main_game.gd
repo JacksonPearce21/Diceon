@@ -20,8 +20,14 @@ var round_score = 0
 
 func _ready():
 	start_round()
+	$Shop.hide()
 	pass
 
+func _process(delta):
+	if GlobalManager.out_of_shop == true:
+		start_round()
+		GlobalManager.out_of_shop = false
+	
 func start_round():
 	GlobalManager.current_round += 1
 	round_score = 0
@@ -113,3 +119,5 @@ func _on_button_pressed():
 func _on_click_catcher_gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
 		get_tree().call_group("cards", "hide_description")	
+		
+		

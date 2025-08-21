@@ -1,51 +1,39 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwmlfrx8gkuic"]
+[gd_scene load_steps=8 format=3 uid="uid://bwmlfrx8gkuic"]
 
-[ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="1_a0mxf"]
 [ext_resource type="Script" uid="uid://dh5p4q0e85c4f" path="res://Scenes/shop.gd" id="1_s8dlv"]
-[ext_resource type="StyleBox" uid="uid://cd3gq3x358a4d" path="res://UI/MenuStyleBox.tres" id="2_ymrm4"]
+[ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="1_ymrm4"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="3_s8dlv"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="4_tyrku"]
 [ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="5_5xp22"]
 [ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="6_ow1eo"]
-[ext_resource type="PackedScene" uid="uid://dly6ums2vd1lr" path="res://Scenes/side_bar.tscn" id="7_k6pkm"]
-[ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="9_tyrku"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xp22"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Shop" type="Panel"]
+theme = ExtResource("1_ymrm4")
 script = ExtResource("1_s8dlv")
-
-[node name="Backround" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(576.5, 320)
-scale = Vector2(0.384333, 0.329)
-texture = ExtResource("1_a0mxf")
-
-[node name="SideBar" parent="." instance=ExtResource("7_k6pkm")]
-position = Vector2(20, 0)
 
 [node name="shopping" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 375.0
-offset_top = 215.0
-offset_right = 1047.0
-offset_bottom = 650.0
-theme_override_styles/panel = ExtResource("2_ymrm4")
+offset_right = 710.0
+offset_bottom = 500.0
+theme = ExtResource("1_ymrm4")
 
 [node name="Bar" type="Panel" parent="shopping"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 125.0
-offset_right = 659.0
-offset_bottom = 425.0
+offset_left = 35.0
+offset_top = 145.0
+offset_right = 684.0
+offset_bottom = 445.0
 
 [node name="ClickCatcher" type="Panel" parent="shopping/Bar"]
+visible = false
 layout_mode = 0
-offset_left = -104.0
-offset_top = -343.0
-offset_right = 765.0
-offset_bottom = 306.0
+offset_left = -33.0
+offset_top = -146.0
+offset_right = 675.0
+offset_bottom = 359.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5xp22")
 
 [node name="Label" type="Label" parent="shopping/Bar"]
@@ -80,10 +68,10 @@ offset_bottom = 210.0
 
 [node name="Next_round" type="Button" parent="shopping"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 15.0
-offset_right = 220.0
-offset_bottom = 118.0
+offset_left = 46.0
+offset_top = 20.0
+offset_right = 249.0
+offset_bottom = 123.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -106,25 +94,14 @@ text = "Next Round"
 
 [node name="Label" type="Label" parent="shopping"]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 19.0
-offset_right = 525.0
-offset_bottom = 121.0
+offset_left = 382.0
+offset_top = 28.0
+offset_right = 602.0
+offset_bottom = 130.0
 theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
 theme_override_fonts/font = ExtResource("3_s8dlv")
 theme_override_font_sizes/font_size = 75
 text = "SHOP"
 
-[node name="CardSlots" parent="." instance=ExtResource("9_tyrku")]
-position = Vector2(330, 10)
-scale = Vector2(1.15, 1.15)
-
-[node name="ClickCatcher" parent="CardSlots/Bar" index="0"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 674.0
-
 [connection signal="gui_input" from="shopping/Bar/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="shopping/Next_round" to="." method="_on_next_round_pressed"]
-
-[editable path="CardSlots"]

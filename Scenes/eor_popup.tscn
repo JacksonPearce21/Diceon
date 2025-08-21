@@ -14,8 +14,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 script = ExtResource("1_dayh2")
 
 [node name="Pop-up" type="Panel" parent="."]
-offset_right = 712.0
-offset_bottom = 502.0
+offset_right = 710.0
+offset_bottom = 500.0
 theme = ExtResource("2_fpj8r")
 
 [node name="Win_text" type="Label" parent="Pop-up"]

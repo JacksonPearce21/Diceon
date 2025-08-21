@@ -2,7 +2,6 @@ extends Panel
 
 
 func _ready():
-	GlobalManager.shopping = true
 	CardManager.shop_slots = [
 		$shopping/Bar/card1,
 		$shopping/Bar/card2,
@@ -12,8 +11,8 @@ func _ready():
 	pass
 
 func _on_next_round_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_game.tscn")
-	GlobalManager.shopping = false
+	self.hide()
+	GlobalManager.out_of_shop = true
 	GlobalManager.next_round()
 
 

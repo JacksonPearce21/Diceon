@@ -8,6 +8,7 @@ var money_made = 0
 
 func _ready():
 	cash_out_btn.disabled = true
+	$"../Shop".hide()
 	pass
 	
 func _process(delta):
@@ -52,7 +53,7 @@ func reset_labels():
 func _on_cash_out_pressed() -> void:
 	update_money()
 	reset_labels()
-	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
+	$"../Shop".show()
 	
 
 func _on_click_catcher_gui_input(event: InputEvent):
