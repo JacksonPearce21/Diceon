@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3lenq48oro1j"]
+[gd_scene load_steps=4 format=3 uid="uid://b3lenq48oro1j"]
 
 [ext_resource type="Script" uid="uid://dj8q5piyd6def" path="res://Scenes/card_slots.gd" id="1_hvror"]
-[ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="2_1gett"]
 [ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="2_13qok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qok"]
@@ -64,7 +63,6 @@ offset_left = 676.0
 offset_top = 127.0
 offset_right = 705.0
 offset_bottom = 150.0
-theme_override_fonts/font = ExtResource("2_1gett")
 text = "0/5"
 
 [connection signal="gui_input" from="Bar/ClickCatcher" to="." method="_on_click_catcher_gui_input"]

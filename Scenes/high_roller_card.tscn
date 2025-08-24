@@ -58,10 +58,10 @@ autowrap_mode = 2
 
 [node name="Buy_btn" type="Button" parent="Discription_Box"]
 layout_mode = 0
-offset_left = -76.0
-offset_top = 104.0
-offset_right = -30.0
-offset_bottom = 129.0
+offset_left = -81.0
+offset_top = 96.0
+offset_right = -24.0
+offset_bottom = 128.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -70,7 +70,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_f5ra5")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = ExtResource("3_tu5xh")
 theme_override_styles/hover_pressed_mirrored = ExtResource("4_puylk")
 theme_override_styles/hover_pressed = ExtResource("4_puylk")

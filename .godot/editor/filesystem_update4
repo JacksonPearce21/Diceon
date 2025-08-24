@@ -1,9 +1,11 @@
 res://Scenes/main_game.tscn
+res://Card_theme.tres
 res://Assets/Button_style_box.tres
 res://Assets/Button_style_pressed.tres
 res://Scripts/main_game.gd
 res://Assets/New_sidebar_themeing.tres
 res://Assets/New_inner_sidebar_themeing.tres
+res://UI/sidebar_Font_themeing.tres
 res://Scenes/shop.tscn
 res://Scenes/eor_popup.tscn
 res://Scenes/side_bar.tscn
@@ -14,6 +16,5 @@ res://Scenes/high_roller_card.tscn
 res://Scenes/dealers_cut.tscn
 res://Scenes/card_sharp.tscn
 res://Scenes/on_the_edge.tscn
-res://Scenes/shop.gd
-res://Scripts/Global_manager.gd
-res://Card_theme.tres
+res://Assets/Button theme.tres
+res://Assets/Text theme.tres

@@ -59,10 +59,10 @@ autowrap_mode = 2
 
 [node name="Buy_btn" type="Button" parent="Discription_Box"]
 layout_mode = 0
-offset_left = -76.0
-offset_top = 104.0
-offset_right = -30.0
-offset_bottom = 129.0
+offset_left = -94.0
+offset_top = 96.0
+offset_right = -15.0
+offset_bottom = 128.0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -71,7 +71,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_ugqpq")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = ExtResource("4_14e32")
 theme_override_styles/hover_pressed_mirrored = ExtResource("5_vs16j")
 theme_override_styles/hover_pressed = ExtResource("5_vs16j")
@@ -81,7 +81,7 @@ theme_override_styles/pressed_mirrored = ExtResource("5_vs16j")
 theme_override_styles/pressed = ExtResource("5_vs16j")
 theme_override_styles/normal_mirrored = ExtResource("4_14e32")
 theme_override_styles/normal = ExtResource("4_14e32")
-text = "-$0"
+text = "BUY"
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bs82185dtcax6"]
+
+[ext_resource type="FontFile" uid="uid://ddk8als1w5lpa" path="res://Assets/Montserrat-Bold.ttf" id="1_4tafq"]
+[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="1_mf1uu"]
+
+[resource]
+Button/fonts/font = ExtResource("1_4tafq")
+Button/styles/disabled = ExtResource("1_mf1uu")
+Button/styles/normal = ExtResource("1_mf1uu")

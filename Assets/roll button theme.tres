@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c3bevy1kp2dtg"]
+
+[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="1_3l8mo"]
+
+[resource]
+Button/styles/disabled = ExtResource("1_3l8mo")
+Button/styles/normal = ExtResource("1_3l8mo")

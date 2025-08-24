@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://twfci1goorii"]
+
+[ext_resource type="FontFile" uid="uid://ddk8als1w5lpa" path="res://Assets/Montserrat-Bold.ttf" id="1_wu314"]
+
+[resource]
+Label/fonts/font = ExtResource("1_wu314")

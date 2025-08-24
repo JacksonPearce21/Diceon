@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5am5xdlwbbvv"]
+[gd_scene load_steps=6 format=3 uid="uid://c5am5xdlwbbvv"]
 
-[ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="1_2e1hu"]
 [ext_resource type="Script" uid="uid://cr1omxfymrqbh" path="res://Scripts/eor_popup.gd" id="1_dayh2"]
-[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="2_dayh2"]
 [ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="2_fpj8r"]
-[ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="3_fpj8r"]
-[ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="4_ewfj4"]
+[ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="3_2e1hu"]
+[ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="4_2e1hu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpj8r"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -20,77 +18,73 @@ theme = ExtResource("2_fpj8r")
 
 [node name="Win_text" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 123.0
-offset_top = 223.0
-offset_right = 228.0
-offset_bottom = 265.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_2e1hu")
+offset_left = 113.0
+offset_top = 168.0
+offset_right = 218.0
+offset_bottom = 210.0
+theme = ExtResource("3_2e1hu")
 theme_override_font_sizes/font_size = 30
 text = "Win:"
 horizontal_alignment = 1
 
 [node name="Win_money" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 239.0
-offset_top = 229.0
-offset_right = 396.0
-offset_bottom = 271.0
+offset_left = 88.0
+offset_top = 209.0
+offset_right = 245.0
+offset_bottom = 251.0
+theme = ExtResource("3_2e1hu")
 theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
-theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
 text = "$"
 horizontal_alignment = 1
 
 [node name="Rolls_text" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 39.0
-offset_top = 173.0
-offset_right = 322.0
-offset_bottom = 215.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_2e1hu")
+offset_left = 384.0
+offset_top = 165.0
+offset_right = 667.0
+offset_bottom = 207.0
+theme = ExtResource("3_2e1hu")
 theme_override_font_sizes/font_size = 30
 text = "Rolls Left:"
 horizontal_alignment = 1
 
 [node name="Rolls_left" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 300.0
-offset_top = 174.0
-offset_right = 335.0
-offset_bottom = 216.0
+offset_left = 513.0
+offset_top = 205.0
+offset_right = 548.0
+offset_bottom = 247.0
 theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
-theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
 text = "$"
 horizontal_alignment = 1
 
 [node name="Interest_text" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 51.0
-offset_top = 275.0
-offset_right = 309.0
-offset_bottom = 317.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_2e1hu")
+offset_left = 196.0
+offset_top = 327.0
+offset_right = 454.0
+offset_bottom = 369.0
+theme = ExtResource("3_2e1hu")
 theme_override_font_sizes/font_size = 30
 text = "Interest:"
 horizontal_alignment = 1
 
 [node name="Interest" type="Label" parent="Pop-up"]
 layout_mode = 2
-offset_left = 189.0
-offset_top = 277.0
-offset_right = 447.0
-offset_bottom = 319.0
+offset_left = 193.0
+offset_top = 363.0
+offset_right = 451.0
+offset_bottom = 405.0
 theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
-theme_override_fonts/font = ExtResource("1_2e1hu")
 theme_override_font_sizes/font_size = 30
 text = "$"
 horizontal_alignment = 1
 
 [node name="ClickCatcher" type="Panel" parent="Pop-up"]
+visible = false
 layout_mode = 0
 offset_top = 1.0
 offset_right = 721.0
@@ -103,25 +97,9 @@ offset_left = 81.0
 offset_top = 21.0
 offset_right = 631.0
 offset_bottom = 121.0
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_2e1hu")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = ExtResource("2_dayh2")
-theme_override_styles/hover_pressed_mirrored = ExtResource("3_fpj8r")
-theme_override_styles/hover_pressed = ExtResource("3_fpj8r")
-theme_override_styles/hover_mirrored = ExtResource("4_ewfj4")
-theme_override_styles/hover = ExtResource("4_ewfj4")
-theme_override_styles/pressed_mirrored = ExtResource("3_fpj8r")
-theme_override_styles/pressed = ExtResource("3_fpj8r")
-theme_override_styles/normal_mirrored = ExtResource("2_dayh2")
-theme_override_styles/normal = ExtResource("2_dayh2")
-text = "Cash Out $0"
+theme = ExtResource("4_2e1hu")
+theme_override_font_sizes/font_size = 40
+text = "CASH OUT $0"
 
 [connection signal="gui_input" from="Pop-up/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="Pop-up/cash_out" to="." method="_on_cash_out_pressed"]

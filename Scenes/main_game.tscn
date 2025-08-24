@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=14 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
@@ -6,12 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="2_6j5ir"]
 [ext_resource type="PackedScene" uid="uid://dly6ums2vd1lr" path="res://Scenes/side_bar.tscn" id="3_0xqxu"]
 [ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="4_18r40"]
-[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="5_6y7pd"]
 [ext_resource type="Texture2D" uid="uid://dkqgtce5dbq8m" path="res://Assets/Multiplication_Sign.svg.png" id="5_mgc0q"]
-[ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="6_73nn6"]
-[ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="7_r0mdn"]
 [ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="10_c78sm"]
 [ext_resource type="PackedScene" uid="uid://c5am5xdlwbbvv" path="res://Scenes/eor_popup.tscn" id="10_r0mdn"]
+[ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="12_c78sm"]
 [ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="12_tpqse"]
 [ext_resource type="PackedScene" uid="uid://bwmlfrx8gkuic" path="res://Scenes/shop.tscn" id="14_i47ox"]
 
@@ -23,13 +21,13 @@ script = ExtResource("1_0e3vx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-offset = Vector2(576, 324)
-transform = Transform2D(1, 0, 0, 1, 576, 324)
+offset = Vector2(576, 338.5)
+transform = Transform2D(1, 0, 0, 1, 576, 338.5)
 
 [node name="Gradient" type="Sprite2D" parent="CanvasLayer"]
 z_index = -1
-position = Vector2(5.00679e-06, 15.5)
-scale = Vector2(0.237333, 0.1895)
+position = Vector2(1.16825e-05, -0.250007)
+scale = Vector2(0.236, 0.18975)
 texture = ExtResource("2_6j5ir")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
@@ -62,10 +60,10 @@ shadow_blur = 4.0
 
 [node name="int_label" type="Label" parent="CanvasLayer"]
 visible = false
-offset_left = 520.0
-offset_top = 147.0
-offset_right = 544.0
-offset_bottom = 170.0
+offset_left = -204.0
+offset_top = -149.0
+offset_right = -176.0
+offset_bottom = -114.0
 theme_override_colors/font_color = Color(0, 0.705882, 1, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 25
@@ -103,10 +101,10 @@ shadow_blur = 2.0
 
 [node name="mult_label" type="Label" parent="CanvasLayer"]
 visible = false
-offset_left = 939.0
-offset_top = 158.0
-offset_right = 966.0
-offset_bottom = 181.0
+offset_left = 205.0
+offset_top = -144.0
+offset_right = 233.0
+offset_bottom = -109.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 25
@@ -119,32 +117,33 @@ texture = ExtResource("5_mgc0q")
 
 [node name="Added_score" type="Label" parent="CanvasLayer"]
 visible = false
-offset_left = 716.0
-offset_top = 89.0
-offset_right = 790.0
-offset_bottom = 131.0
+offset_left = -29.0
+offset_top = -174.0
+offset_right = 45.0
+offset_bottom = -132.0
 theme_override_fonts/font = ExtResource("4_18r40")
 theme_override_font_sizes/font_size = 30
 text = "+ 0"
 horizontal_alignment = 1
 
 [node name="ClickCatcher" type="Panel" parent="CanvasLayer"]
-offset_left = -354.0
-offset_top = -171.0
-offset_right = 357.0
-offset_bottom = 325.0
+offset_left = -356.0
+offset_top = -193.0
+offset_right = 355.0
+offset_bottom = 310.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpqse")
 
 [node name="CardSlots" parent="." instance=ExtResource("12_tpqse")]
-position = Vector2(220, 0)
+position = Vector2(219, -1)
 
 [node name="SideBar" parent="." instance=ExtResource("3_0xqxu")]
 z_index = 1
 position = Vector2(-2, -2)
 
 [node name="EOR_popup" parent="." instance=ExtResource("10_r0mdn")]
+visible = false
 z_index = 50
-position = Vector2(221, 150)
+position = Vector2(221, 149)
 
 [node name="Panel" type="Panel" parent="."]
 offset_top = 528.0
@@ -153,37 +152,22 @@ offset_bottom = 649.0
 theme = ExtResource("10_c78sm")
 
 [node name="Shop" parent="." instance=ExtResource("14_i47ox")]
+visible = false
 z_index = 50
 offset_left = 221.0
-offset_top = 150.0
+offset_top = 149.0
 offset_right = 221.0
-offset_bottom = 150.0
+offset_bottom = 149.0
 
 [node name="Roll Dice" type="Button" parent="."]
 z_index = 1
-offset_left = 497.0
-offset_top = 533.0
-offset_right = 679.0
-offset_bottom = 641.0
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_18r40")
+offset_left = 420.0
+offset_top = 546.0
+offset_right = 754.0
+offset_bottom = 634.0
+theme = ExtResource("12_c78sm")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = ExtResource("5_6y7pd")
-theme_override_styles/hover_pressed_mirrored = ExtResource("6_73nn6")
-theme_override_styles/hover_pressed = ExtResource("6_73nn6")
-theme_override_styles/hover_mirrored = ExtResource("7_r0mdn")
-theme_override_styles/hover = ExtResource("7_r0mdn")
-theme_override_styles/pressed_mirrored = ExtResource("6_73nn6")
-theme_override_styles/pressed = ExtResource("6_73nn6")
-theme_override_styles/normal_mirrored = ExtResource("5_6y7pd")
-theme_override_styles/normal = ExtResource("5_6y7pd")
-text = "Roll Dice"
+text = "ROLL DICE"
 
 [connection signal="gui_input" from="CanvasLayer/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="Roll Dice" to="." method="_on_button_pressed"]
