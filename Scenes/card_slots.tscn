@@ -58,11 +58,4 @@ offset_top = 10.0
 offset_right = 662.0
 offset_bottom = 140.0
 
-[node name="Label" type="Label" parent="."]
-offset_left = 676.0
-offset_top = 127.0
-offset_right = 705.0
-offset_bottom = 150.0
-text = "0/5"
-
 [connection signal="gui_input" from="Bar/ClickCatcher" to="." method="_on_click_catcher_gui_input"]

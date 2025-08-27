@@ -1,6 +1,6 @@
 extends Button
 
-var card_price = 10
+var card_price = 12
 @onready var description_box = $Discription_Box
 @onready var buy_btn = $Discription_Box/Buy_btn
 @onready var effect_panel = $Panel
@@ -16,6 +16,7 @@ func _ready():
 
 func _process(delta):
 	if CardEffects.show_card_sharp_effect:
+		effect_label.text = CardEffects.card_sharp_label
 		effect_panel.show()
 	else:
 		effect_panel.hide()

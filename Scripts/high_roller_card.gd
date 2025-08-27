@@ -1,10 +1,11 @@
 extends Button
 
-var card_price = 7
+var card_price = 4
 @onready var description_box = $Discription_Box
 @onready var buy_btn = $Discription_Box/Buy_btn
 @onready var effect_panel = $Panel
 @onready var effect_label = $Panel/Effect
+@onready var current_label = $Discription_Box/currently
 var card_scene = "res://Scenes/high_roller_card.tscn"
 var shown
 

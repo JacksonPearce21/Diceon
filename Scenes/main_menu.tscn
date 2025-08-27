@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgcelsjbepe7u"]
+[gd_scene load_steps=7 format=3 uid="uid://cgcelsjbepe7u"]
 
 [ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="1_1ehe0"]
 [ext_resource type="Script" uid="uid://bjkfvcpsiaslb" path="res://Scenes/main_menu.gd" id="1_ce3w2"]
 [ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="2_ce3w2"]
 [ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="3_n45e2"]
+[ext_resource type="Theme" uid="uid://ceyi1cd1jcqx1" path="res://UI/sidebar_Font_themeing.tres" id="3_opfnp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -23,17 +24,25 @@ offset_right = 721.0
 offset_bottom = 506.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_opfnp")
 
-[node name="DICEON" type="Label" parent="Pop-up"]
+[node name="Panel" type="Panel" parent="Pop-up"]
 layout_mode = 0
-offset_left = 137.0
-offset_top = 56.0
-offset_right = 557.0
-offset_bottom = 179.0
+offset_left = 124.0
+offset_top = 64.0
+offset_right = 568.0
+offset_bottom = 200.0
+theme = ExtResource("3_opfnp")
+
+[node name="DICEON" type="Label" parent="Pop-up/Panel"]
+layout_mode = 0
+offset_right = 444.0
+offset_bottom = 136.0
 theme = ExtResource("2_ce3w2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 100
 text = "DICEON"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Start_game" type="Button" parent="Pop-up"]
 layout_mode = 0

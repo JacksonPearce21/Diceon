@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsy7ux0uj3ivl"]
 
-[ext_resource type="Texture2D" uid="uid://dkk8hhyf1rsmx" path="res://Assets/PNG-cards-1.3/ace_of_spades2.png" id="1_gppua"]
 [ext_resource type="Theme" uid="uid://d27dsxdcf0ldf" path="res://Card_theme.tres" id="1_puylk"]
 [ext_resource type="Script" uid="uid://52amdubktoul" path="res://Scripts/high_roller_card.gd" id="1_tu5xh"]
+[ext_resource type="Texture2D" uid="uid://d4fbua4ptgtv3" path="res://Assets/PNG-cards-1.3/king_of_clubs2.png" id="3_f5ra5"]
 [ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="4_htmql"]
 [ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="5_a367s"]
 
@@ -21,7 +21,7 @@ script = ExtResource("1_tu5xh")
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 130.0
-texture = ExtResource("1_gppua")
+texture = ExtResource("3_f5ra5")
 expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
@@ -75,10 +75,8 @@ offset_bottom = 174.0
 
 [node name="Effect" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 9.0
 offset_right = 102.0
-offset_bottom = 32.0
+offset_bottom = 40.0
 theme = ExtResource("4_htmql")
 theme_override_colors/font_color = Color(0.278076, 0.751876, 1, 1)
 text = "+x to int"

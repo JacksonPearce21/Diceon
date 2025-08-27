@@ -16,6 +16,7 @@ func _ready():
 
 func _process(delta):
 	if CardEffects.show_on_the_edge_effect:
+		effect_label.text = CardEffects.on_the_edge_label
 		effect_panel.show()
 	else:
 		effect_panel.hide()

@@ -32,3 +32,5 @@ res://Assets/Button_style_box_hovered.tres
 res://Assets/Button_style_box_pressed.tres
 res://Scenes/Camera environment.tres
 res://Card_effects.gd
+res://Scripts/CardManager.gd
+res://Scenes/on_a_roll.tscn

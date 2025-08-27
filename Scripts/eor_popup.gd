@@ -15,6 +15,7 @@ func _process(delta):
 	if GlobalManager.round_status == true:
 		show()
 		GlobalManager.slide_in(self)
+		check_for_cards()
 		update_labels()
 		GlobalManager.round_status = false
 	
@@ -65,3 +66,14 @@ func _on_cash_out_pressed():
 func _on_click_catcher_gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
 		get_tree().call_group("cards", "hide_description")	
+		
+func check_for_cards():
+	if CardManager.current_cards.has(preload("res://Scenes/on_the_edge.gd")):
+		CardEffects.on_the_edge(GlobalManager.dice_rolls)
+		if CardEffects.zero_rolls == true:
+			await get_tree().create_timer(0.75).timeout
+			GlobalManager.money += 4
+		CardEffects.show_on_the_edge_effect = true
+		
+	CardEffects.reset_variables()
+			

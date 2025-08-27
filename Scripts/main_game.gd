@@ -68,6 +68,17 @@ func calculate_score():
 	check_for_cards()
 
 func check_for_cards():
+	if CardManager.current_cards.has(preload("res://Scenes/card_sharp.tscn")):
+		CardEffects.card_sharp(base, mult)
+		if CardEffects.sharp_int != 0:
+			await get_tree().create_timer(1.5).timeout
+			base = CardEffects.sharp_int
+			int_label.text = str(base)
+		if CardEffects.sharp_mult != 0:
+			await get_tree().create_timer(1.5).timeout
+			mult = CardEffects.sharp_mult
+			mult_label.text = str(mult)
+	
 	if CardManager.current_cards.has(preload("res://Scenes/dealers_cut.tscn")):
 		CardEffects.dealers_cut(base, mult)
 		if CardEffects.dealers_int != 0:
@@ -85,11 +96,14 @@ func check_for_cards():
 			await get_tree().create_timer(1.5).timeout
 			base = CardEffects.high_roller_int
 			int_label.text = str(base)
+
 	final_calc()
 	
 func final_calc():
 	added_score_ani()
 	await get_tree().create_timer(2.5).timeout
+	if CardEffects.roll_amount > 0:
+		await get_tree().create_timer(1).timeout
 	update_labels()
 	check_game_status()
 	roll_dice.disabled = false
@@ -101,6 +115,14 @@ func added_score_ani():
 	await get_tree().create_timer(0.6).timeout
 	var total = base * mult
 	added_score_label.text = "+" + str(total)
+	
+	if CardManager.current_cards.has(preload("res://Scenes/on_a_roll.tscn")):
+		if CardEffects.roll_amount > 0:
+			total += CardEffects.roll_amount
+			CardEffects.on_a_roll_label = "+" + str(CardEffects.roll_amount)
+			await get_tree().create_timer(1).timeout
+			added_score_label.text = "+" + str(total)
+
 	animate_added_score_label()
 	await get_tree().create_timer(0.85).timeout
 	round_score += total
