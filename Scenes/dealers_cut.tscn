@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://diewwg2q0c40e"]
+[gd_scene load_steps=6 format=3 uid="uid://diewwg2q0c40e"]
 
 [ext_resource type="Theme" uid="uid://d27dsxdcf0ldf" path="res://Card_theme.tres" id="1_4k5wn"]
 [ext_resource type="Script" uid="uid://csxda05f6segx" path="res://Scenes/dealers_cut.gd" id="1_a51xl"]
 [ext_resource type="Texture2D" uid="uid://lnrh34eex23h" path="res://Assets/PNG-cards-1.3/2_of_hearts.png" id="2_a51xl"]
-[ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="3_gxl8k"]
-[ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="4_qqjd1"]
-[ext_resource type="StyleBox" uid="uid://cn5k1t1mloygf" path="res://Assets/Button_style_pressed.tres" id="5_d3f0i"]
-[ext_resource type="StyleBox" uid="uid://bpxwbwsgjuesr" path="res://Assets/Button_style_hoverd.tres" id="6_buiqw"]
+[ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="4_32nyf"]
+[ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="5_32nyf"]
 
 [node name="DealersCut" type="Button" groups=["cards"]]
 offset_right = 100.0
@@ -38,8 +36,8 @@ layout_mode = 0
 offset_top = 4.0
 offset_right = 124.0
 offset_bottom = 27.0
+theme = ExtResource("5_32nyf")
 theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
-theme_override_fonts/font = ExtResource("3_gxl8k")
 text = "DEALERS CUT"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -49,7 +47,7 @@ layout_mode = 0
 offset_top = 21.0
 offset_right = 124.0
 offset_bottom = 131.0
-theme_override_fonts/font = ExtResource("3_gxl8k")
+theme = ExtResource("5_32nyf")
 theme_override_font_sizes/font_size = 14
 text = "Adds +1 to your lowest die face"
 horizontal_alignment = 1
@@ -62,24 +60,7 @@ offset_left = -94.0
 offset_top = 96.0
 offset_right = -15.0
 offset_bottom = 128.0
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_gxl8k")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = ExtResource("4_qqjd1")
-theme_override_styles/hover_pressed_mirrored = ExtResource("5_d3f0i")
-theme_override_styles/hover_pressed = ExtResource("5_d3f0i")
-theme_override_styles/hover_mirrored = ExtResource("6_buiqw")
-theme_override_styles/hover = ExtResource("6_buiqw")
-theme_override_styles/pressed_mirrored = ExtResource("5_d3f0i")
-theme_override_styles/pressed = ExtResource("5_d3f0i")
-theme_override_styles/normal_mirrored = ExtResource("4_qqjd1")
-theme_override_styles/normal = ExtResource("4_qqjd1")
+theme = ExtResource("4_32nyf")
 text = "BUY"
 
 [node name="Panel" type="Panel" parent="."]
@@ -94,8 +75,9 @@ offset_left = -1.0
 offset_top = 9.0
 offset_right = 102.0
 offset_bottom = 32.0
+scale = Vector2(1, 1.00313)
+theme = ExtResource("5_32nyf")
 theme_override_colors/font_color = Color(0.278076, 0.751876, 1, 1)
-theme_override_fonts/font = ExtResource("3_gxl8k")
 text = "+1 to _"
 horizontal_alignment = 1
 vertical_alignment = 1

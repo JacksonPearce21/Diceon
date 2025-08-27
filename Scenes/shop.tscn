@@ -8,12 +8,10 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xp22"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="Shop" type="Panel"]
-theme = ExtResource("1_ymrm4")
+[node name="Shop" type="Node2D"]
 script = ExtResource("1_s8dlv")
 
 [node name="shopping" type="Panel" parent="."]
-layout_mode = 0
 offset_right = 710.0
 offset_bottom = 500.0
 theme = ExtResource("1_ymrm4")
@@ -26,7 +24,6 @@ offset_right = 681.0
 offset_bottom = 445.0
 
 [node name="ClickCatcher" type="Panel" parent="shopping/Bar"]
-visible = false
 layout_mode = 0
 offset_left = -33.0
 offset_top = -146.0
@@ -36,9 +33,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5xp22")
 
 [node name="Label" type="Label" parent="shopping/Bar"]
 layout_mode = 0
-offset_left = 3.0
-offset_right = 116.0
-offset_bottom = 28.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 121.0
+offset_bottom = 34.0
 theme = ExtResource("3_fdj0q")
 theme_override_font_sizes/font_size = 20
 text = "Buy Cards"
@@ -71,6 +69,7 @@ offset_top = 20.0
 offset_right = 249.0
 offset_bottom = 123.0
 theme = ExtResource("4_fdj0q")
+theme_override_font_sizes/font_size = 25
 text = "NEXT ROUND"
 
 [node name="Label" type="Label" parent="shopping"]

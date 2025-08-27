@@ -1,17 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://dw3w34kbru0l7"]
+[gd_scene load_steps=18 format=3 uid="uid://dw3w34kbru0l7"]
 
 [ext_resource type="Script" uid="uid://cg0s6ul11jicy" path="res://Scripts/main_game.gd" id="1_0e3vx"]
 [ext_resource type="PackedScene" uid="uid://o01oo036vh67" path="res://Scenes/int_dice.tscn" id="1_pu3va"]
 [ext_resource type="PackedScene" uid="uid://bpixuutkjt0je" path="res://Scenes/mult_dice.tscn" id="2_0e3vx"]
 [ext_resource type="Texture2D" uid="uid://daxvji2c3lmw8" path="res://Assets/10081437.jpg" id="2_6j5ir"]
 [ext_resource type="PackedScene" uid="uid://dly6ums2vd1lr" path="res://Scenes/side_bar.tscn" id="3_0xqxu"]
-[ext_resource type="FontFile" uid="uid://wjtial1f50wv" path="res://Assets/Cinzel-Bold.ttf" id="4_18r40"]
+[ext_resource type="Environment" uid="uid://cb7a4nfltmxvv" path="res://Scenes/Camera environment.tres" id="4_erobn"]
+[ext_resource type="Theme" uid="uid://ceyi1cd1jcqx1" path="res://UI/sidebar_Font_themeing.tres" id="4_sftma"]
 [ext_resource type="Texture2D" uid="uid://dkqgtce5dbq8m" path="res://Assets/Multiplication_Sign.svg.png" id="5_mgc0q"]
+[ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="6_vc13p"]
 [ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="10_c78sm"]
 [ext_resource type="PackedScene" uid="uid://c5am5xdlwbbvv" path="res://Scenes/eor_popup.tscn" id="10_r0mdn"]
 [ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="12_c78sm"]
 [ext_resource type="PackedScene" uid="uid://b3lenq48oro1j" path="res://Scenes/card_slots.tscn" id="12_tpqse"]
+[ext_resource type="PackedScene" uid="uid://cgcelsjbepe7u" path="res://Scenes/main_menu.tscn" id="13_c78sm"]
 [ext_resource type="PackedScene" uid="uid://bwmlfrx8gkuic" path="res://Scenes/shop.tscn" id="14_i47ox"]
+[ext_resource type="PackedScene" uid="uid://bthwwv46wwu3x" path="res://Scenes/game_over.tscn" id="14_sftma"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpqse"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -21,21 +25,20 @@ script = ExtResource("1_0e3vx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-offset = Vector2(576, 338.5)
-transform = Transform2D(1, 0, 0, 1, 576, 338.5)
+offset = Vector2(576, 370)
+transform = Transform2D(1, 0, 0, 1, 576, 370)
 
 [node name="Gradient" type="Sprite2D" parent="CanvasLayer"]
-z_index = -1
-position = Vector2(1.16825e-05, -0.250007)
-scale = Vector2(0.236, 0.18975)
+position = Vector2(0, -31.5)
+scale = Vector2(0.236, 0.1895)
 texture = ExtResource("2_6j5ir")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_left = -628.0
-offset_top = -445.385
-offset_right = -116.0
-offset_bottom = 66.615
-scale = Vector2(1.7, 1.7)
+offset_left = -414.0
+offset_top = -205.0
+offset_right = 97.9999
+offset_bottom = 307.0
+scale = Vector2(0.8, 0.8)
 
 [node name="IntViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
 transparent_bg = true
@@ -46,8 +49,9 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/IntViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-fov = 120.0
-far = 4023.15
+environment = ExtResource("4_erobn")
+current = true
+fov = 80.0
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/IntViewport"]
 light_energy = 0.4
@@ -58,24 +62,67 @@ shadow_bias = 2.0
 shadow_opacity = 0.5
 shadow_blur = 4.0
 
-[node name="int_label" type="Label" parent="CanvasLayer"]
-visible = false
-offset_left = -204.0
-offset_top = -149.0
-offset_right = -176.0
-offset_bottom = -114.0
-theme_override_colors/font_color = Color(0, 0.705882, 1, 1)
-theme_override_fonts/font = ExtResource("4_18r40")
-theme_override_font_sizes/font_size = 25
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = -243.0
+offset_top = -150.0
+offset_right = -173.0
+offset_bottom = -105.0
+theme = ExtResource("4_sftma")
+
+[node name="mult_label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 45.0
+theme = ExtResource("6_vc13p")
+theme_override_colors/font_color = Color(0.17715, 0.688751, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+offset_left = 179.0
+offset_top = -150.0
+offset_right = 249.0
+offset_bottom = -105.0
+theme = ExtResource("4_sftma")
+
+[node name="int_label" type="Label" parent="CanvasLayer/Panel2"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 45.0
+theme = ExtResource("6_vc13p")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="CanvasLayer"]
+offset_left = -37.0
+offset_top = -186.0
+offset_right = 33.0
+offset_bottom = -141.0
+theme = ExtResource("4_sftma")
+
+[node name="Added_score" type="Label" parent="CanvasLayer/Panel3"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 45.0
+theme = ExtResource("6_vc13p")
+theme_override_font_sizes/font_size = 30
 text = "+0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.035
-offset_left = -35.0
-offset_top = -253.385
-offset_right = 436.68
-offset_bottom = 258.615
+offset_left = 72.0
+offset_top = -141.0
+offset_right = 543.68
+offset_bottom = 371.0
+scale = Vector2(0.55, 0.55)
 
 [node name="MultViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer2"]
 transparent_bg = true
@@ -87,8 +134,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+environment = ExtResource("4_erobn")
 current = true
-fov = 115.0
+fov = 80.0
 far = 4023.15
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer2/MultViewport"]
@@ -99,75 +147,106 @@ shadow_enabled = true
 shadow_bias = 0.5
 shadow_blur = 2.0
 
-[node name="mult_label" type="Label" parent="CanvasLayer"]
-visible = false
-offset_left = 205.0
-offset_top = -144.0
-offset_right = 233.0
-offset_bottom = -109.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_18r40")
-theme_override_font_sizes/font_size = 25
-text = "+0"
-
 [node name="MultiplySign" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(9, 1.61505)
+position = Vector2(-3, -0.38501)
 scale = Vector2(0.115938, 0.104844)
 texture = ExtResource("5_mgc0q")
 
-[node name="Added_score" type="Label" parent="CanvasLayer"]
-visible = false
-offset_left = -29.0
-offset_top = -174.0
-offset_right = 45.0
-offset_bottom = -132.0
-theme_override_fonts/font = ExtResource("4_18r40")
-theme_override_font_sizes/font_size = 30
-text = "+ 0"
-horizontal_alignment = 1
-
 [node name="ClickCatcher" type="Panel" parent="CanvasLayer"]
 offset_left = -356.0
-offset_top = -193.0
+offset_top = -201.0
 offset_right = 355.0
-offset_bottom = 310.0
+offset_bottom = 302.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpqse")
+
+[node name="Panel5" type="Panel" parent="CanvasLayer"]
+offset_left = -278.0
+offset_top = 110.0
+offset_right = -114.0
+offset_bottom = 145.0
+theme = ExtResource("4_sftma")
+
+[node name="label" type="Label" parent="CanvasLayer/Panel5"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 149.0
+offset_bottom = 34.0
+theme = ExtResource("6_vc13p")
+theme_override_colors/font_color = Color(0.176471, 0.690196, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Interger Dice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="CanvasLayer"]
+offset_left = 133.0
+offset_top = 110.0
+offset_right = 297.0
+offset_bottom = 145.0
+theme = ExtResource("4_sftma")
+
+[node name="label" type="Label" parent="CanvasLayer/Panel4"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 164.0
+offset_bottom = 34.0
+theme = ExtResource("6_vc13p")
+theme_override_colors/font_color = Color(0.176471, 0.690196, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Multiplier Dice"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CardSlots" parent="." instance=ExtResource("12_tpqse")]
 position = Vector2(219, -1)
 
 [node name="SideBar" parent="." instance=ExtResource("3_0xqxu")]
 z_index = 1
-position = Vector2(-2, -2)
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
 
 [node name="EOR_popup" parent="." instance=ExtResource("10_r0mdn")]
 visible = false
 z_index = 50
-position = Vector2(221, 149)
+position = Vector2(221, 528)
 
 [node name="Panel" type="Panel" parent="."]
+offset_left = 221.0
 offset_top = 528.0
-offset_right = 1152.0
+offset_right = 931.0
 offset_bottom = 649.0
 theme = ExtResource("10_c78sm")
 
 [node name="Shop" parent="." instance=ExtResource("14_i47ox")]
 visible = false
 z_index = 50
-offset_left = 221.0
-offset_top = 149.0
-offset_right = 221.0
-offset_bottom = 149.0
+position = Vector2(221, 528)
 
 [node name="Roll Dice" type="Button" parent="."]
 z_index = 1
-offset_left = 420.0
+offset_left = 406.0
 offset_top = 546.0
-offset_right = 754.0
+offset_right = 740.0
 offset_bottom = 634.0
+scale = Vector2(1.00323, 1)
 theme = ExtResource("12_c78sm")
 theme_override_font_sizes/font_size = 30
 text = "ROLL DICE"
 
+[node name="Main Menu" parent="." instance=ExtResource("13_c78sm")]
+visible = false
+position = Vector2(221, 528)
+
+[node name="Game Over" parent="." instance=ExtResource("14_sftma")]
+visible = false
+position = Vector2(221, 528)
+
 [connection signal="gui_input" from="CanvasLayer/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="Roll Dice" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Main Menu/Pop-up/Start_game" to="." method="_on_start_game_pressed"]
+
+[editable path="EOR_popup"]
+[editable path="Main Menu"]

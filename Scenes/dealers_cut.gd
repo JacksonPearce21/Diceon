@@ -6,6 +6,7 @@ var card_price = 10
 @onready var effect_panel = $Panel
 @onready var effect_label = $Panel/Effect
 var card_scene = "res://Scenes/high_roller_card.tscn"
+var shown
 
 func _ready():
 	add_to_group("Card")
@@ -22,13 +23,18 @@ func _process(delta):
 
 func show_description():
 	description_box.show()
+	shown = true
 
 func hide_description():
 	description_box.hide()
+	shown = false
 
 func _on_pressed():
-	get_tree().call_group("cards", "hide_description")
-	CardManager.select_card(self)
+	if shown:
+		get_tree().call_group("cards", "hide_description")
+	else:
+		get_tree().call_group("cards", "hide_description")
+		CardManager.select_card(self)
 
 func _on_buy_btn_pressed():
 	if GlobalManager.money >= card_price:

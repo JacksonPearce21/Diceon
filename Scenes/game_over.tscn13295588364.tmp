@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bthwwv46wwu3x"]
+
+[ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="1_ek8ke"]
+[ext_resource type="Script" uid="uid://cpbrn654gykdf" path="res://Scenes/game_over.gd" id="1_eoghk"]
+[ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="2_eoghk"]
+[ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="3_14u15"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ryr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Game Over" type="Node2D"]
+script = ExtResource("1_eoghk")
+
+[node name="Pop-up" type="Panel" parent="."]
+offset_right = 710.0
+offset_bottom = 500.0
+theme = ExtResource("1_ek8ke")
+
+[node name="ClickCatcher" type="Panel" parent="Pop-up"]
+visible = false
+layout_mode = 0
+offset_top = 1.0
+offset_right = 721.0
+offset_bottom = 506.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j3ryr")
+
+[node name="GAME OVER" type="Label" parent="Pop-up"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 45.0
+offset_right = 668.0
+offset_bottom = 168.0
+theme = ExtResource("2_eoghk")
+theme_override_colors/font_color = Color(0.498039, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="New_run" type="Button" parent="Pop-up"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 296.0
+offset_right = 478.0
+offset_bottom = 366.0
+theme = ExtResource("3_14u15")
+text = "NEW RUN"
+
+[node name="Close" type="Button" parent="Pop-up"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 384.0
+offset_right = 479.0
+offset_bottom = 454.0
+theme = ExtResource("3_14u15")
+text = "CLOSE GAME"

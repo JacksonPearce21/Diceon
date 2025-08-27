@@ -1,4 +1,4 @@
-extends Panel
+extends Node2D
 
 
 func _ready():
@@ -11,9 +11,11 @@ func _ready():
 	pass
 
 func _on_next_round_pressed() -> void:
-	self.hide()
 	GlobalManager.out_of_shop = true
 	GlobalManager.next_round()
+	GlobalManager.slide_out(self)
+	await get_tree().create_timer(GlobalManager.tween_out_dur).timeout
+	self.hide()
 
 
 func _on_click_catcher_gui_input(event: InputEvent):

@@ -1,9 +1,13 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bs82185dtcax6"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bs82185dtcax6"]
 
 [ext_resource type="FontFile" uid="uid://ddk8als1w5lpa" path="res://Assets/Montserrat-Bold.ttf" id="1_4tafq"]
 [ext_resource type="StyleBox" uid="uid://25f06d3wx5kb" path="res://Assets/Button_style_box.tres" id="1_mf1uu"]
+[ext_resource type="StyleBox" uid="uid://dxb0o8l47jwrm" path="res://Assets/Button_style_box_hovered.tres" id="3_dx0j1"]
+[ext_resource type="StyleBox" uid="uid://c2abjdf4hqihm" path="res://Assets/Button_style_box_pressed.tres" id="4_f1e06"]
 
 [resource]
 Button/fonts/font = ExtResource("1_4tafq")
 Button/styles/disabled = ExtResource("1_mf1uu")
+Button/styles/hover = ExtResource("3_dx0j1")
 Button/styles/normal = ExtResource("1_mf1uu")
+Button/styles/pressed = ExtResource("4_f1e06")

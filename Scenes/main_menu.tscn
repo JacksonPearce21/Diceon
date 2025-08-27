@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgcelsjbepe7u"]
+
+[ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://bjkfvcpsiaslb" path="res://Scenes/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="2_ce3w2"]
+[ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="3_n45e2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_ce3w2")
+
+[node name="Pop-up" type="Panel" parent="."]
+offset_right = 710.0
+offset_bottom = 500.0
+theme = ExtResource("1_1ehe0")
+
+[node name="ClickCatcher" type="Panel" parent="Pop-up"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 721.0
+offset_bottom = 506.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_opfnp")
+
+[node name="DICEON" type="Label" parent="Pop-up"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 56.0
+offset_right = 557.0
+offset_bottom = 179.0
+theme = ExtResource("2_ce3w2")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "DICEON"
+
+[node name="Start_game" type="Button" parent="Pop-up"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 388.0
+offset_right = 467.0
+offset_bottom = 458.0
+theme = ExtResource("3_n45e2")
+theme_override_font_sizes/font_size = 35
+text = "START GAME"

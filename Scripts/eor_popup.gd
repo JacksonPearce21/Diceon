@@ -14,11 +14,12 @@ func _ready():
 func _process(delta):
 	if GlobalManager.round_status == true:
 		show()
+		GlobalManager.slide_in(self)
 		update_labels()
 		GlobalManager.round_status = false
 	
 func calculate_money():
-	cash_out_btn.text =  "Cash Out $" + str(money_made)
+	cash_out_btn.text =  "CASH OUT $" + str(money_made)
 	
 func update_money():
 	GlobalManager.money += money_made
@@ -43,18 +44,23 @@ func update_labels():
 	cash_out_btn.disabled = false
 	
 func reset_labels():
-	cash_out_btn.text =  "Cash Out $0"
+	cash_out_btn.text =  "CASH OUT $0"
 	interest_label.text =  "$"
 	win_money.text = "$" 
 	rolls_remaining.text =  "$"
 	money_made = 0
 	cash_out_btn.disabled = true
 
-func _on_cash_out_pressed() -> void:
+func _on_cash_out_pressed():
 	update_money()
 	reset_labels()
+	CardManager.populate_shop()
+	GlobalManager.slide_out(self)
+	await get_tree().create_timer((GlobalManager.tween_out_dur) - 0.075).timeout
 	$"../Shop".show()
-	
+	$"../SideBar/SideBar/Panel/Panel/Required_score".text = "SHOP"
+	$"../SideBar/SideBar/Panel2/Panel/Score".text = "SHOP"
+	GlobalManager.slide_in($"../Shop")
 
 func _on_click_catcher_gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
