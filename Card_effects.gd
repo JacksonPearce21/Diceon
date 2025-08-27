@@ -25,7 +25,7 @@ func high_roller(base_int):
 		high_roller_int = 13
 		high_roller_label = "+3 to int"
 	else:
-		high_roller_label = "Not 8, 9 or 10"
+		high_roller_label = "No Effect"
 	show_high_roller_effect = true
 
 func dealers_cut(base_int, base_mult):

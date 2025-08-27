@@ -49,7 +49,7 @@ offset_right = 124.0
 offset_bottom = 131.0
 theme = ExtResource("4_htmql")
 theme_override_font_sizes/font_size = 14
-text = "If intager dice is:
+text = "If interger dice is:
 8, +1
 9, +2
 10, +3"

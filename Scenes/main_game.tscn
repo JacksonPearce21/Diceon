@@ -69,7 +69,7 @@ offset_right = -173.0
 offset_bottom = -105.0
 theme = ExtResource("4_sftma")
 
-[node name="mult_label" type="Label" parent="CanvasLayer/Panel"]
+[node name="int_label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_right = 70.0
 offset_bottom = 45.0
@@ -87,7 +87,7 @@ offset_right = 249.0
 offset_bottom = -105.0
 theme = ExtResource("4_sftma")
 
-[node name="int_label" type="Label" parent="CanvasLayer/Panel2"]
+[node name="mult_label" type="Label" parent="CanvasLayer/Panel2"]
 layout_mode = 0
 offset_right = 70.0
 offset_bottom = 45.0
@@ -154,15 +154,15 @@ texture = ExtResource("5_mgc0q")
 
 [node name="ClickCatcher" type="Panel" parent="CanvasLayer"]
 offset_left = -356.0
-offset_top = -201.0
+offset_top = -221.0
 offset_right = 355.0
-offset_bottom = 302.0
+offset_bottom = 282.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpqse")
 
 [node name="Panel5" type="Panel" parent="CanvasLayer"]
-offset_left = -278.0
+offset_left = -289.0
 offset_top = 110.0
-offset_right = -114.0
+offset_right = -125.0
 offset_bottom = 145.0
 theme = ExtResource("4_sftma")
 
@@ -170,7 +170,7 @@ theme = ExtResource("4_sftma")
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 149.0
+offset_right = 163.0
 offset_bottom = 34.0
 theme = ExtResource("6_vc13p")
 theme_override_colors/font_color = Color(0.176471, 0.690196, 1, 1)
@@ -188,11 +188,12 @@ theme = ExtResource("4_sftma")
 
 [node name="label" type="Label" parent="CanvasLayer/Panel4"]
 layout_mode = 0
+offset_left = 1.0
 offset_top = 1.0
-offset_right = 164.0
+offset_right = 163.0
 offset_bottom = 34.0
 theme = ExtResource("6_vc13p")
-theme_override_colors/font_color = Color(0.176471, 0.690196, 1, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Multiplier Dice"
 horizontal_alignment = 1

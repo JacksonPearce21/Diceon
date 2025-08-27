@@ -60,9 +60,9 @@ func roll_all_dice():
 
 func calculate_score():
 	base = int_dice.current_face_value
-	int_label.text = "" + str(base)
+	int_label.text = str(base)
 	mult = mult_dice.current_face_value
-	mult_label.text = "" + str(mult)
+	mult_label.text = str(mult)
 	int_label.show()
 	mult_label.show()
 	check_for_cards()
@@ -73,18 +73,18 @@ func check_for_cards():
 		if CardEffects.dealers_int != 0:
 			await get_tree().create_timer(1.5).timeout
 			base = CardEffects.dealers_int
-			int_label.text = "" + str(base)
+			int_label.text = str(base)
 		elif CardEffects.dealers_mult != 0:
 			await get_tree().create_timer(1.5).timeout
 			mult = CardEffects.dealers_mult
-			mult_label.text = "" + str(mult)
+			mult_label.text = str(mult)
 	
 	if CardManager.current_cards.has(preload("res://Scenes/high_roller_card.tscn")):
 		CardEffects.high_roller(base)
 		if CardEffects.high_roller_int != 0:
 			await get_tree().create_timer(1.5).timeout
 			base = CardEffects.high_roller_int
-			int_label.text = "" + str(base)
+			int_label.text = str(base)
 	final_calc()
 	
 func final_calc():
