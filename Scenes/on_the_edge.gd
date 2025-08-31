@@ -5,7 +5,7 @@ var card_price = 5
 @onready var buy_btn = $Discription_Box/Buy_btn
 @onready var effect_panel = $Panel
 @onready var effect_label = $Panel/Effect
-var card_scene = "res://Scenes/high_roller_card.tscn"
+var card_scene = "res://Scenes/on_the_edge.tscn"
 var shown
 
 func _ready():

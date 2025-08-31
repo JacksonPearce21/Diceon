@@ -102,7 +102,7 @@ func check_for_cards():
 func final_calc():
 	added_score_ani()
 	await get_tree().create_timer(2.5).timeout
-	if CardEffects.roll_amount > 0:
+	if CardManager.current_cards.has(preload("res://Scenes/on_a_roll.tscn")):
 		await get_tree().create_timer(1).timeout
 	update_labels()
 	check_game_status()
@@ -160,6 +160,8 @@ func check_game_status():
 	if GlobalManager.score_needed <= round_score:
 		$"Roll Dice".hide()
 		GlobalManager.round_status = true
+		if round_score >= GlobalManager.score_needed * 1.2:
+			CardEffects.roll_amount += 4
 		pass
 	if GlobalManager.score_needed > round_score:
 		if GlobalManager.dice_rolls == 0:

@@ -1,12 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5am5xdlwbbvv"]
+[gd_scene load_steps=9 format=3 uid="uid://c5am5xdlwbbvv"]
 
 [ext_resource type="Script" uid="uid://cr1omxfymrqbh" path="res://Scripts/eor_popup.gd" id="1_dayh2"]
 [ext_resource type="Theme" uid="uid://dtwkn1uwlcod5" path="res://Assets/New_inner_sidebar_themeing.tres" id="2_fpj8r"]
 [ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="3_2e1hu"]
 [ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="4_2e1hu"]
+[ext_resource type="Theme" uid="uid://ceyi1cd1jcqx1" path="res://UI/sidebar_Font_themeing.tres" id="5_dayh2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpj8r"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0c8f"]
+bg_color = Color(0.154876, 0.154876, 0.154876, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_fpj8r"]
+Panel/styles/panel = SubResource("StyleBoxFlat_k0c8f")
 
 [node name="EOR_popup" type="Node2D"]
 script = ExtResource("1_dayh2")
@@ -15,75 +31,6 @@ script = ExtResource("1_dayh2")
 offset_right = 710.0
 offset_bottom = 500.0
 theme = ExtResource("2_fpj8r")
-
-[node name="Win_text" type="Label" parent="Pop-up"]
-layout_mode = 2
-offset_left = 485.0
-offset_top = 158.0
-offset_right = 590.0
-offset_bottom = 200.0
-theme = ExtResource("3_2e1hu")
-theme_override_font_sizes/font_size = 30
-text = "Win:"
-horizontal_alignment = 1
-
-[node name="Win_money" type="Label" parent="Pop-up"]
-layout_mode = 2
-offset_left = 455.0
-offset_top = 196.0
-offset_right = 612.0
-offset_bottom = 238.0
-theme = ExtResource("3_2e1hu")
-theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "$"
-horizontal_alignment = 1
-
-[node name="Rolls_text" type="Label" parent="Pop-up"]
-layout_mode = 2
-offset_left = 40.0
-offset_top = 157.0
-offset_right = 323.0
-offset_bottom = 199.0
-theme = ExtResource("3_2e1hu")
-theme_override_font_sizes/font_size = 30
-text = "Rolls Left:"
-horizontal_alignment = 1
-
-[node name="Rolls_left" type="Label" parent="Pop-up"]
-layout_mode = 2
-offset_left = 161.0
-offset_top = 200.0
-offset_right = 196.0
-offset_bottom = 242.0
-theme = ExtResource("3_2e1hu")
-theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "$"
-horizontal_alignment = 1
-
-[node name="Interest_text" type="Label" parent="Pop-up"]
-layout_mode = 2
-offset_left = 196.0
-offset_top = 327.0
-offset_right = 454.0
-offset_bottom = 369.0
-theme = ExtResource("3_2e1hu")
-theme_override_font_sizes/font_size = 30
-text = "Interest:"
-horizontal_alignment = 1
-
-[node name="Interest" type="Label" parent="Pop-up"]
-layout_mode = 2
-offset_left = 193.0
-offset_top = 363.0
-offset_right = 451.0
-offset_bottom = 405.0
-theme = ExtResource("3_2e1hu")
-theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "$"
-horizontal_alignment = 1
 
 [node name="ClickCatcher" type="Panel" parent="Pop-up"]
 layout_mode = 0
@@ -101,6 +48,123 @@ offset_bottom = 121.0
 theme = ExtResource("4_2e1hu")
 theme_override_font_sizes/font_size = 40
 text = "CASH OUT $0"
+
+[node name="Panel" type="Panel" parent="Pop-up"]
+offset_left = 421.0
+offset_top = 145.0
+offset_right = 664.0
+offset_bottom = 311.0
+theme = SubResource("Theme_fpj8r")
+
+[node name="Panel" type="Panel" parent="Pop-up/Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 64.0
+offset_right = 219.0
+offset_bottom = 156.0
+theme = ExtResource("5_dayh2")
+
+[node name="Win_money" type="Label" parent="Pop-up/Panel/Panel"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 193.0
+offset_bottom = 91.0
+theme = ExtResource("3_2e1hu")
+theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Win_text" type="Label" parent="Pop-up/Panel"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 242.0
+offset_bottom = 56.0
+theme = ExtResource("3_2e1hu")
+theme_override_font_sizes/font_size = 35
+text = "Win:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Pop-up"]
+offset_left = 52.0
+offset_top = 145.0
+offset_right = 295.0
+offset_bottom = 311.0
+theme = SubResource("Theme_fpj8r")
+
+[node name="Rolls_text" type="Label" parent="Pop-up/Panel2"]
+layout_mode = 2
+offset_top = 14.0
+offset_right = 242.0
+offset_bottom = 56.0
+theme = ExtResource("3_2e1hu")
+theme_override_font_sizes/font_size = 35
+text = "Rolls Left:"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Pop-up/Panel2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 64.0
+offset_right = 219.0
+offset_bottom = 156.0
+theme = ExtResource("5_dayh2")
+
+[node name="Rolls_left" type="Label" parent="Pop-up/Panel2/Panel"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 193.0
+offset_bottom = 90.0
+theme = ExtResource("3_2e1hu")
+theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Pop-up"]
+offset_left = 238.0
+offset_top = 320.0
+offset_right = 481.0
+offset_bottom = 486.0
+theme = SubResource("Theme_fpj8r")
+
+[node name="Interest_text" type="Label" parent="Pop-up/Panel3"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 243.0
+offset_bottom = 50.0
+theme = ExtResource("3_2e1hu")
+theme_override_font_sizes/font_size = 35
+text = "Interest:"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Pop-up/Panel3"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 64.0
+offset_right = 219.0
+offset_bottom = 156.0
+theme = ExtResource("5_dayh2")
+
+[node name="Interest" type="Label" parent="Pop-up/Panel3/Panel"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 193.0
+offset_bottom = 91.0
+theme = ExtResource("3_2e1hu")
+theme_override_colors/font_color = Color(0.87451, 0.882353, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "$"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="gui_input" from="Pop-up/ClickCatcher" to="." method="_on_click_catcher_gui_input"]
 [connection signal="pressed" from="Pop-up/cash_out" to="." method="_on_cash_out_pressed"]

@@ -10,7 +10,7 @@ var card_instance
 var all_cards = [
 	preload("res://Scenes/high_roller_card.tscn"),
 	preload("res://Scenes/dealers_cut.tscn"),
-	preload("res://Scenes/on_the_edge.tscn"),
+	preload("res://Scenes/on_the_edge_working.tscn"),
 	preload("res://Scenes/card_sharp.tscn"),
 	preload("res://Scenes/on_a_roll.tscn")
 ]
@@ -31,7 +31,7 @@ func clear_children(node):
 	for child in node.get_children():
 		child.queue_free()
 
-var current_cards: Array = [load("res://Scenes/on_the_edge.tscn")]
+var current_cards: Array = []
 
 func load_cards_into_slots():
 	for i in current_cards.size():

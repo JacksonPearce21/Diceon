@@ -9,7 +9,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyaw2"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0c8f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjhww"]
 bg_color = Color(0.154876, 0.154876, 0.154876, 1)
 border_width_left = 1
 border_width_top = 1
@@ -22,7 +22,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="Theme" id="Theme_k0c8f"]
-Panel/styles/panel = SubResource("StyleBoxFlat_k0c8f")
+Panel/styles/panel = SubResource("StyleBoxFlat_vjhww")
 
 [node name="SideBar" type="Panel"]
 script = ExtResource("1_dyaw2")

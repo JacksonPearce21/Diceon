@@ -1,9 +1,9 @@
 extends Node2D
 var money_made = 0
 
-@onready var win_money = $"Pop-up/Win_money"
-@onready var rolls_remaining = $"Pop-up/Rolls_left"
-@onready var interest_label = $"Pop-up/Interest"
+@onready var win_money = $"Pop-up/Panel/Panel/Win_money"
+@onready var rolls_remaining = $"Pop-up/Panel2/Panel/Rolls_left"
+@onready var interest_label = $"Pop-up/Panel3/Panel/Interest"
 @onready var cash_out_btn = $"Pop-up/cash_out"
 
 func _ready():
@@ -68,12 +68,13 @@ func _on_click_catcher_gui_input(event: InputEvent):
 		get_tree().call_group("cards", "hide_description")	
 		
 func check_for_cards():
-	if CardManager.current_cards.has(preload("res://Scenes/on_the_edge.gd")):
+	if CardManager.current_cards.has(preload("res://Scenes/on_the_edge_working.tscn")):
+		print("whatsup")
 		CardEffects.on_the_edge(GlobalManager.dice_rolls)
 		if CardEffects.zero_rolls == true:
 			await get_tree().create_timer(0.75).timeout
 			GlobalManager.money += 4
-		CardEffects.show_on_the_edge_effect = true
+		CardEffects.show_on_the_edge_effect = false
 		
 	CardEffects.reset_variables()
 			

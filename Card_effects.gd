@@ -6,15 +6,17 @@ var dealers_mult
 var sharp_int
 var sharp_mult
 var zero_rolls
-var roll_amount
+var roll_amount = 0
 var high_roller_label = ""
 var dealers_cut_label = ""
 var card_sharp_label = ""
 var on_the_edge_label = ""
+var on_a_roll_label = ""
 var show_on_the_edge_effect
 var show_dealers_cut_effect
 var show_high_roller_effect 
 var show_card_sharp_effect
+var show_on_a_roll
 
 
 func _ready():

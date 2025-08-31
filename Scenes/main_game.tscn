@@ -249,5 +249,4 @@ position = Vector2(221, 528)
 [connection signal="pressed" from="Roll Dice" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Main Menu/Pop-up/Start_game" to="." method="_on_start_game_pressed"]
 
-[editable path="EOR_popup"]
 [editable path="Main Menu"]

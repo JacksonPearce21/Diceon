@@ -34,3 +34,5 @@ res://Scenes/Camera environment.tres
 res://Card_effects.gd
 res://Scripts/CardManager.gd
 res://Scenes/on_a_roll.tscn
+res://Scenes/on_a_roll.gd
+res://Scenes/on_the_edge_working.tscn
