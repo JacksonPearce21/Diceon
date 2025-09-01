@@ -65,6 +65,7 @@ text = "BUY"
 
 [node name="sell_btn" type="Button" parent="Discription_Box"]
 visible = false
+layout_mode = 0
 offset_left = -97.0
 offset_top = 96.0
 offset_right = -15.0
