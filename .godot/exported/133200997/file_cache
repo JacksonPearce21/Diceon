@@ -1,0 +1,34 @@
+res://Assets/Button theme.tres::789987cebf071f2d590adfcf73249665::1756716695::res://.godot/exported/133200997/export-e043488cfee67655a4e71d2a9b54d521-Button theme.res
+res://Assets/Button_style_box.tres::d516597277a0f66de44789009083dbf2::1756721653::res://.godot/exported/133200997/export-80ca3d9d66083a07c1abcede35d954cd-Button_style_box.res
+res://Assets/Button_style_box_hovered.tres::f2f42aa8a9434c9ed3ad4423765c7bc1::1756721653::res://.godot/exported/133200997/export-895e14e823f71396a8a137964f2b66c2-Button_style_box_hovered.res
+res://Assets/Button_style_box_pressed.tres::2e7d094205f1025e88399b1f87fecafa::1756721653::res://.godot/exported/133200997/export-9667d2a4d63fd43f51018c1188d6560d-Button_style_box_pressed.res
+res://Assets/Button_style_hoverd.tres::6040979318c56ba3eb2d3bc04771c2d8::1756713959::res://.godot/exported/133200997/export-880994170a589a45224f7d443328e4bc-Button_style_hoverd.res
+res://Assets/Button_style_pressed.tres::032571c62a9550d8f07066a983d017b9::1756716695::res://.godot/exported/133200997/export-a8f50a25630dc60741162b01805733d4-Button_style_pressed.res
+res://Assets/casinotheme.tres::54370085439c24343492f95eea9ac2a8::1756713959::res://.godot/exported/133200997/export-537fa4947e7857857202bbbc2e8da705-casinotheme.res
+res://Assets/New_inner_sidebar_themeing.tres::1465d5f638c2ab84e496adca5ba4800f::1756721653::res://.godot/exported/133200997/export-6a50f9fd1cc29f6261ab6313a6741f20-New_inner_sidebar_themeing.res
+res://Assets/New_sidebar_themeing.tres::d96f24cb6f61ef39285e93cfbb7b9bcf::1756721653::res://.godot/exported/133200997/export-8e7300d4c1914e021a1af99ac2eb97eb-New_sidebar_themeing.res
+res://Assets/roll button theme.tres::9e974b96953822961ab9d703e88dbffc::1756716695::res://.godot/exported/133200997/export-14cad6d547314cc8bfac3a2c56c20f58-roll button theme.res
+res://Assets/Text theme.tres::9b25b53381e7cd878ff13d55957a505b::1756716695::res://.godot/exported/133200997/export-b601f36d988164fc72e1989ae5547dbe-Text theme.res
+res://Scenes/Camera environment.tres::ad57c613494fa878d5c2a3dbccdd817d::1756721653::res://.godot/exported/133200997/export-d9ef2cdab178a2b4b620fd837f24649a-Camera environment.res
+res://Scenes/CardSlots.tscn::75fdfea8f13cc9257b0a0c2b0b8e305f::1753311858::res://.godot/exported/133200997/export-4ab57f3039d6b9e7193065c8533f9627-CardSlots.scn
+res://Scenes/card_sharp.tscn::c8eeaacf4e9935231f349c0768466a71::1756724159::res://.godot/exported/133200997/export-096d111b7dda7e810e9be4a5668894cb-card_sharp.scn
+res://Scenes/card_slots.tscn::636a7f499a484b899ee3d6f87e98159b::1756724159::res://.godot/exported/133200997/export-2c1352173e39632bcfdffe984b23edbd-card_slots.scn
+res://Scenes/Compound_gamble.tscn::20e2f185ca9721328ddd2906a00fcea9::1756724962::res://.godot/exported/133200997/export-937a2106e79cbdca486cc1d32f60ccd5-Compound_gamble.scn
+res://Scenes/dealers_cut.tscn::d2e3717f060f8406bcc61fc15763e5ac::1756724159::res://.godot/exported/133200997/export-a2ec1a149da62e1512e075216d735b2c-dealers_cut.scn
+res://Scenes/eor_popup.tscn::665fea554067593b38f7db79a11b5f98::1756724158::res://.godot/exported/133200997/export-5f3acd44bcee63cd8969bd0eee2e9e4f-eor_popup.scn
+res://Scenes/game_over.tscn::033f19838f199e67f13c5540d796f3a5::1756724158::res://.godot/exported/133200997/export-33c320c97f44f546398d5119030678b4-game_over.scn
+res://Scenes/high_roller_card.tscn::70c648393957a221661621a062c2f154::1756724159::res://.godot/exported/133200997/export-18113c02e497f0ba6276ee231b85d0c0-high_roller_card.scn
+res://Scenes/int_dice.tscn::8079e1925461a6d58ef8809266e467f3::1756724158::res://.godot/exported/133200997/export-7462ecaf4c3caee88f7fa1a1a59cac60-int_dice.scn
+res://Scenes/main_game.tscn::c3271cf309371c4da63a2e47b032a03e::1756724298::res://.godot/exported/133200997/export-021330300ae54bb33d3aad589e8e59bf-main_game.scn
+res://Scenes/main_menu.tscn::cac48eb62f545e4e26d84acd2b2bf886::1756724158::res://.godot/exported/133200997/export-502e6a9b269597544b234abf28958cd8-main_menu.scn
+res://Scenes/mult_dice.tscn::56a55ad617fe2244d044f9c86d2000a3::1756724158::res://.godot/exported/133200997/export-c808fda0eb3590a1b08d5648ba7c814b-mult_dice.scn
+res://Scenes/on_a_roll.tscn::2eb98411bf75d2fdcd8c92fe81e8ac53::1756724251::res://.godot/exported/133200997/export-52ef22200d77fd301fd0dbc17a7f655d-on_a_roll.scn
+res://Scenes/on_the_edge_working.tscn::8f85fce19b27dfffe7482de2e9ffc80c::1756724159::res://.godot/exported/133200997/export-daa438b21659723a2aaed3d86287ce6c-on_the_edge_working.scn
+res://Scenes/shop.tscn::5c5fe48561307b712188203dd6e642c1::1756724158::res://.godot/exported/133200997/export-b7dd42cb7bf84e38525288ceeaa155a5-shop.scn
+res://Scenes/side_bar.tscn::a8d3cb4d06ad4e2ec585bcc144d875d9::1756724158::res://.godot/exported/133200997/export-0bb30cfdde4d8cdcc2d4af6ab0cc1f93-side_bar.scn
+res://Scenes/Treasury.tscn::71358cfa42d1332bb5d2bc7ab9e8ef01::1756724263::res://.godot/exported/133200997/export-907d482ab71da0e35f1808ea84ee9417-Treasury.scn
+res://Scenes/weighed_scales.tscn::8aba45a1b6325dd48c22736eb71caa19::1756724239::res://.godot/exported/133200997/export-f838adba98c538f8fde6fa22d728bb67-weighed_scales.scn
+res://UI/MenuStyleBox.tres::7fca196c8f507d684451ea69801ad873::1755563165::res://.godot/exported/133200997/export-6c28b67a614003e09065c89af82906bf-MenuStyleBox.res
+res://UI/sidebar_Font_themeing.tres::c653c27ed89858e75dee23d8ca865397::1756721653::res://.godot/exported/133200997/export-e3846d04e6ab673b08194a8bec550ef2-sidebar_Font_themeing.res
+res://Card_theme.tres::c6fb2e788646cfef62e76c8f4d24f8f2::1756721653::res://.godot/exported/133200997/export-e692b9d1cbab584ef9f2477d4123933f-Card_theme.res
+res://Scenes/snake_eyes.tscn::c3e02453e69e3fd8e73b65edb2fe632e::1756724959::res://.godot/exported/133200997/export-8dcadcc02f616ad1077f9b6ff214c3f6-snake_eyes.scn

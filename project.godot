@@ -24,4 +24,3 @@ CardEffects="*res://Card_effects.gd"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"

@@ -176,7 +176,7 @@ offset_bottom = 34.0
 theme = ExtResource("6_vc13p")
 theme_override_colors/font_color = Color(0.176471, 0.690196, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Interger Dice"
+text = "Integer Dice"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -201,11 +201,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CardSlots" parent="." instance=ExtResource("12_tpqse")]
-z_index = 2
 position = Vector2(219, -1)
 
 [node name="SideBar" parent="." instance=ExtResource("3_0xqxu")]
-z_index = 60
 offset_left = -2.0
 offset_top = -2.0
 offset_right = -2.0

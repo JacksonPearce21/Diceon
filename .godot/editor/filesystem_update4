@@ -1,8 +1,13 @@
 res://Scenes/main_game.tscn
 res://Card_theme.tres
+res://Assets/Button_style_box.tres
+res://Assets/Button_style_box_hovered.tres
+res://Assets/Button_style_box_pressed.tres
 res://Scripts/main_game.gd
+res://Assets/New_sidebar_themeing.tres
 res://UI/sidebar_Font_themeing.tres
 res://Scenes/Camera environment.tres
+res://Assets/New_inner_sidebar_themeing.tres
 res://Scenes/shop.tscn
 res://Scenes/eor_popup.tscn
 res://Scenes/main_menu.tscn
@@ -19,10 +24,7 @@ res://Scenes/on_the_edge_working.tscn
 res://Scenes/Compound_gamble.tscn
 res://Scenes/Treasury.tscn
 res://Scenes/weighed_scales.tscn
-res://Scripts/CardManager.gd
-res://Scripts/Global_manager.gd
-res://Assets/New_sidebar_themeing.tres
-res://Assets/Button_style_box.tres
-res://Assets/Button_style_box_hovered.tres
-res://Assets/Button_style_box_pressed.tres
-res://Assets/New_inner_sidebar_themeing.tres
+res://Scenes/on_a_roll.gd
+res://Scenes/treasury.gd
+res://Scenes/weighed_scales.gd
+res://Scenes/unlimited_bank.gd

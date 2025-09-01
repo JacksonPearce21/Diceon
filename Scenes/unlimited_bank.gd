@@ -1,6 +1,6 @@
 extends Button
 
-var card_price = 7
+var card_price = 5
 @onready var description_box = $Discription_Box
 @onready var buy_btn = $Discription_Box/Buy_btn
 @onready var sell = $Discription_Box/sell_btn
