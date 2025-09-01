@@ -1,17 +1,10 @@
 # Diceon
 
-Roguelike Dice rolling game
+Diceon is a Roguelike, Dice rolling, deck-building game.
 
-## Description
+The game is inspired by balatro.
 
-## Getting Started
+# Installing
 
-### Dependencies
 
-### Installing
-
-### Executing program
-
-## Help
-
-## Version History
+# Development Log
