@@ -49,7 +49,7 @@ offset_right = 124.0
 offset_bottom = 131.0
 theme = ExtResource("5_32nyf")
 theme_override_font_sizes/font_size = 14
-text = "Adds +1 to your lowest die face"
+text = "Adds +2 to your lowest die face"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -63,6 +63,17 @@ offset_bottom = 128.0
 theme = ExtResource("4_32nyf")
 text = "BUY"
 
+[node name="sell_btn" type="Button" parent="Discription_Box"]
+visible = false
+offset_left = -97.0
+offset_top = 96.0
+offset_right = -15.0
+offset_bottom = 128.0
+scale = Vector2(1.00552, 0.98905)
+theme = ExtResource("4_32nyf")
+text = "SELL
+"
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_top = 134.0
@@ -70,6 +81,7 @@ offset_right = 101.0
 offset_bottom = 174.0
 
 [node name="Effect" type="Label" parent="Panel"]
+z_index = 4
 layout_mode = 0
 offset_right = 102.0
 offset_bottom = 40.0
@@ -82,3 +94,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="Discription_Box/Buy_btn" to="." method="_on_buy_btn_pressed"]
+[connection signal="pressed" from="Discription_Box/sell_btn" to="." method="_on_sell_btn_pressed"]

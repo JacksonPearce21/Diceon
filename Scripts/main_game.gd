@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var int_label = $CanvasLayer/Panel/int_label
 @onready var mult_label = $CanvasLayer/Panel2/mult_label
 @onready var int_dice = $CanvasLayer/SubViewportContainer/IntViewport/interger_die
@@ -78,6 +77,15 @@ func check_for_cards():
 			await get_tree().create_timer(1.5).timeout
 			mult = CardEffects.sharp_mult
 			mult_label.text = str(mult)
+			
+			
+	if CardManager.current_cards.has(preload("res://Scenes/high_roller_card.tscn")):
+		CardEffects.high_roller(base)
+		if CardEffects.high_roller_int != 0:
+			await get_tree().create_timer(1.5).timeout
+			base = CardEffects.high_roller_int
+			int_label.text = str(base)
+			
 	
 	if CardManager.current_cards.has(preload("res://Scenes/dealers_cut.tscn")):
 		CardEffects.dealers_cut(base, mult)
@@ -89,22 +97,22 @@ func check_for_cards():
 			await get_tree().create_timer(1.5).timeout
 			mult = CardEffects.dealers_mult
 			mult_label.text = str(mult)
-	
-	if CardManager.current_cards.has(preload("res://Scenes/high_roller_card.tscn")):
-		CardEffects.high_roller(base)
-		if CardEffects.high_roller_int != 0:
-			await get_tree().create_timer(1.5).timeout
-			base = CardEffects.high_roller_int
-			int_label.text = str(base)
 
+	CardEffects.hide_labels()
 	final_calc()
 	
 func final_calc():
 	added_score_ani()
 	await get_tree().create_timer(2.5).timeout
 	if CardManager.current_cards.has(preload("res://Scenes/on_a_roll.tscn")):
-		await get_tree().create_timer(1).timeout
+		if CardEffects.roll_amount > 0:
+			await get_tree().create_timer(0.7).timeout
+			
+	if CardManager.current_cards.has(preload("res://Scenes/Treasury.tscn")):
+		await get_tree().create_timer(0.7).timeout
+	
 	update_labels()
+	CardEffects.show_on_a_roll = false
 	check_game_status()
 	roll_dice.disabled = false
 	
@@ -120,8 +128,16 @@ func added_score_ani():
 		if CardEffects.roll_amount > 0:
 			total += CardEffects.roll_amount
 			CardEffects.on_a_roll_label = "+" + str(CardEffects.roll_amount)
-			await get_tree().create_timer(1).timeout
+			CardEffects.show_on_a_roll = true
+			await get_tree().create_timer(0.7).timeout
 			added_score_label.text = "+" + str(total)
+	
+	if CardManager.current_cards.has(preload("res://Scenes/Treasury.tscn")):
+		total += GlobalManager.money
+		CardEffects.show_treasury = true
+		CardEffects.treasury_label = "+" + str(GlobalManager.money)
+		await get_tree().create_timer(0.7).timeout
+		added_score_label.text = "+" + str(total)
 
 	animate_added_score_label()
 	await get_tree().create_timer(0.85).timeout
@@ -155,14 +171,18 @@ func animate_added_score_label():
 	track_pos.set_ease(Tween.EASE_IN_OUT)
 
 
-
 func check_game_status():
 	if GlobalManager.score_needed <= round_score:
 		$"Roll Dice".hide()
 		GlobalManager.round_status = true
-		if round_score >= GlobalManager.score_needed * 1.2:
-			CardEffects.roll_amount += 4
-		pass
+		if CardManager.current_cards.has(preload("res://Scenes/on_a_roll.tscn")):
+			if round_score >= GlobalManager.score_needed * 1.25:
+				var how_much = int(GlobalManager.score_needed * 0.1)
+				CardEffects.roll_amount += how_much
+				CardEffects.show_on_a_roll = true
+				CardEffects.on_a_roll_label = "ON A ROLL! +" + str(how_much)
+				await get_tree().create_timer(2.5).timeout
+				CardEffects.show_on_a_roll = false
 	if GlobalManager.score_needed > round_score:
 		if GlobalManager.dice_rolls == 0:
 			game_over()
@@ -176,6 +196,11 @@ func game_over():
 
 func _on_button_pressed():
 	$"Roll Dice".disabled = true
+	if CardManager.current_cards.has(preload("res://Scenes/Treasury.tscn")):
+		if randi() % 10 == 0:
+			GlobalManager.money = int(GlobalManager.money * 0.5)
+			CardEffects.show_treasury = true
+			CardEffects.treasury_label = "MONEY HALVED!"
 	roll_all_dice()
 
 func _on_click_catcher_gui_input(event: InputEvent):
@@ -187,5 +212,3 @@ func _on_start_game_pressed():
 	await get_tree().create_timer(GlobalManager.tween_out_dur).timeout
 	$"Main Menu".hide()
 	$"Roll Dice".show()
-	
-	

@@ -28,6 +28,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_vjhww")
 script = ExtResource("1_dyaw2")
 
 [node name="SideBar" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 224.0
 offset_bottom = 652.0
 theme = ExtResource("2_dyaw2")
@@ -150,6 +151,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel4" type="Panel" parent="SideBar"]
+layout_mode = 0
 offset_left = 114.5
 offset_top = 465.0
 offset_right = 217.0
@@ -188,6 +190,7 @@ text = "1"
 horizontal_alignment = 1
 
 [node name="Panel5" type="Panel" parent="SideBar"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 465.0
 offset_right = 109.5
@@ -227,6 +230,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SideBarRight" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 932.0
 offset_right = 1156.0
 offset_bottom = 652.0

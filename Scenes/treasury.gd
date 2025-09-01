@@ -1,12 +1,13 @@
 extends Button
 
-var card_price = 5
+var card_price = 15
 @onready var description_box = $Discription_Box
 @onready var buy_btn = $Discription_Box/Buy_btn
 @onready var effect_panel = $Panel
 @onready var effect_label = $Panel/Effect
+@onready var current_label = $Discription_Box/currently
 @onready var sell = $Discription_Box/sell_btn
-var card_scene = "res://Scenes/on_the_edge.tscn"
+var card_scene = "res://Scenes/on_a_roll.tscn"
 var shown
 
 func _ready():
@@ -16,8 +17,9 @@ func _ready():
 	effect_panel.hide()
 
 func _process(delta):
-	if CardEffects.show_on_the_edge_effect:
-		effect_label.text = CardEffects.on_the_edge_label
+	current_label.text = "Currently: +" + str(GlobalManager.money)
+	if CardEffects.show_treasury:
+		effect_label.text = CardEffects.treasury_label
 		effect_panel.show()
 	else:
 		effect_panel.hide()

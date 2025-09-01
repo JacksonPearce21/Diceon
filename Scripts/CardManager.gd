@@ -12,7 +12,10 @@ var all_cards = [
 	preload("res://Scenes/dealers_cut.tscn"),
 	preload("res://Scenes/on_the_edge_working.tscn"),
 	preload("res://Scenes/card_sharp.tscn"),
-	preload("res://Scenes/on_a_roll.tscn")
+	preload("res://Scenes/on_a_roll.tscn"),
+	preload("res://Scenes/Compound_gamble.tscn"),
+	preload("res://Scenes/Treasury.tscn"),
+	preload("res://Scenes/weighed_scales.tscn")
 ]
 
 func populate_shop():
@@ -34,8 +37,13 @@ func clear_children(node):
 var current_cards: Array = []
 
 func load_cards_into_slots():
-	for i in current_cards.size():
-		card_instance = current_cards[i].instantiate()
+	print(current_cards.size())
+	for slot in card_slots:
+		for child in slot.get_children():
+			child.queue_free()
+
+	for i in range(current_cards.size()):
+		var card_instance = current_cards[i].instantiate()
 		card_slots[i].add_child(card_instance)
 		card_instance.disable_shop_features()
 
@@ -47,3 +55,10 @@ func card_bought(card):
 func select_card(card):
 	current_card = card
 	card.show_description()
+	
+func sell(card):
+	print(current_cards)
+	instanceable_card = load(card.scene_file_path)
+	current_cards.erase(instanceable_card)
+	load_cards_into_slots()
+	print(current_cards)

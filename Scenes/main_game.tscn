@@ -99,15 +99,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel3" type="Panel" parent="CanvasLayer"]
-offset_left = -37.0
+offset_left = -42.0
 offset_top = -186.0
-offset_right = 33.0
+offset_right = 38.0
 offset_bottom = -141.0
 theme = ExtResource("4_sftma")
 
 [node name="Added_score" type="Label" parent="CanvasLayer/Panel3"]
 layout_mode = 0
-offset_right = 70.0
+offset_right = 80.0
 offset_bottom = 45.0
 theme = ExtResource("6_vc13p")
 theme_override_font_sizes/font_size = 30
@@ -153,6 +153,7 @@ scale = Vector2(0.115938, 0.104844)
 texture = ExtResource("5_mgc0q")
 
 [node name="ClickCatcher" type="Panel" parent="CanvasLayer"]
+visible = false
 offset_left = -356.0
 offset_top = -221.0
 offset_right = 355.0
@@ -200,10 +201,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CardSlots" parent="." instance=ExtResource("12_tpqse")]
+z_index = 2
 position = Vector2(219, -1)
 
 [node name="SideBar" parent="." instance=ExtResource("3_0xqxu")]
-z_index = 1
+z_index = 60
 offset_left = -2.0
 offset_top = -2.0
 offset_right = -2.0
@@ -211,10 +213,10 @@ offset_bottom = -2.0
 
 [node name="EOR_popup" parent="." instance=ExtResource("10_r0mdn")]
 visible = false
-z_index = 50
 position = Vector2(221, 528)
 
 [node name="Panel" type="Panel" parent="."]
+z_index = -2
 offset_left = 221.0
 offset_top = 528.0
 offset_right = 931.0
@@ -223,11 +225,10 @@ theme = ExtResource("10_c78sm")
 
 [node name="Shop" parent="." instance=ExtResource("14_i47ox")]
 visible = false
-z_index = 50
+z_index = 1
 position = Vector2(221, 528)
 
 [node name="Roll Dice" type="Button" parent="."]
-z_index = 1
 offset_left = 406.0
 offset_top = 546.0
 offset_right = 740.0
@@ -238,11 +239,9 @@ theme_override_font_sizes/font_size = 30
 text = "ROLL DICE"
 
 [node name="Main Menu" parent="." instance=ExtResource("13_c78sm")]
-visible = false
 position = Vector2(221, 528)
 
 [node name="Game Over" parent="." instance=ExtResource("14_sftma")]
-visible = false
 position = Vector2(221, 528)
 
 [connection signal="gui_input" from="CanvasLayer/ClickCatcher" to="." method="_on_click_catcher_gui_input"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://d27dsxdcf0ldf" path="res://Card_theme.tres" id="1_wf6gl"]
 [ext_resource type="Script" uid="uid://ebmfseiff3v" path="res://Scenes/on_a_roll.gd" id="2_wf6gl"]
-[ext_resource type="Texture2D" uid="uid://da6bkd6bpg7qf" path="res://Assets/PNG-cards-1.3/jack_of_spades2.png" id="3_wf6gl"]
+[ext_resource type="Texture2D" uid="uid://k58iuxbe1aad" path="res://Assets/PNG-cards-1.3/jack_of_clubs2.png" id="3_wf6gl"]
 [ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="4_m8cjj"]
 [ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="5_hf8fm"]
 
@@ -28,13 +28,13 @@ expand_mode = 1
 z_index = 3
 layout_mode = 0
 offset_left = 104.0
-offset_right = 321.0
+offset_right = 363.0
 offset_bottom = 131.0
 
 [node name="Name" type="Label" parent="Discription_Box"]
 layout_mode = 0
 offset_top = 3.0
-offset_right = 217.0
+offset_right = 259.0
 offset_bottom = 26.0
 theme = ExtResource("4_m8cjj")
 theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
@@ -45,11 +45,11 @@ vertical_alignment = 1
 [node name="Discription" type="Label" parent="Discription_Box"]
 layout_mode = 0
 offset_top = 15.0
-offset_right = 218.0
+offset_right = 259.0
 offset_bottom = 117.0
 theme = ExtResource("4_m8cjj")
 theme_override_font_sizes/font_size = 14
-text = "If round score is 1.2x more than required, this card gains +4. This score is added at the end of every roll."
+text = "If round score is 1.25x more than required, this card gains 10% of the required score. This score is added at the end of every roll."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -68,7 +68,7 @@ text = "BUY"
 layout_mode = 0
 offset_left = -1.0
 offset_top = 107.0
-offset_right = 217.0
+offset_right = 259.0
 offset_bottom = 130.0
 theme = ExtResource("4_m8cjj")
 theme_override_colors/font_color = Color(1, 1, 1, 0.635294)
@@ -76,7 +76,19 @@ text = "Currently: +0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="sell_btn" type="Button" parent="Discription_Box"]
+visible = false
+offset_left = -97.0
+offset_top = 96.0
+offset_right = -15.0
+offset_bottom = 128.0
+scale = Vector2(1.00552, 0.98905)
+theme = ExtResource("5_hf8fm")
+text = "SELL
+"
+
 [node name="Panel" type="Panel" parent="."]
+z_index = 4
 layout_mode = 0
 offset_top = 134.0
 offset_right = 101.0
@@ -84,13 +96,15 @@ offset_bottom = 174.0
 
 [node name="Effect" type="Label" parent="Panel"]
 layout_mode = 0
-offset_right = 102.0
+offset_right = 101.0
 offset_bottom = 40.0
 theme = ExtResource("4_m8cjj")
 theme_override_colors/font_color = Color(0.278076, 0.751876, 1, 1)
-text = "+x"
+theme_override_font_sizes/font_size = 13
+text = "ON A ROLL! +5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="Discription_Box/Buy_btn" to="." method="_on_buy_btn_pressed"]
+[connection signal="pressed" from="Discription_Box/sell_btn" to="." method="_on_sell_btn_pressed"]

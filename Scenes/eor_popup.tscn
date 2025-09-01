@@ -50,6 +50,7 @@ theme_override_font_sizes/font_size = 40
 text = "CASH OUT $0"
 
 [node name="Panel" type="Panel" parent="Pop-up"]
+layout_mode = 0
 offset_left = 421.0
 offset_top = 145.0
 offset_right = 664.0
@@ -90,6 +91,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel2" type="Panel" parent="Pop-up"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 145.0
 offset_right = 295.0
@@ -128,6 +130,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel3" type="Panel" parent="Pop-up"]
+layout_mode = 0
 offset_left = 238.0
 offset_top = 320.0
 offset_right = 481.0

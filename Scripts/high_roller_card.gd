@@ -6,6 +6,7 @@ var card_price = 7
 @onready var effect_panel = $Panel
 @onready var effect_label = $Panel/Effect
 @onready var current_label = $Discription_Box/currently
+@onready var sell = $Discription_Box/sell_btn
 var card_scene = "res://Scenes/high_roller_card.tscn"
 var shown
 
@@ -38,11 +39,20 @@ func _on_pressed():
 		CardManager.select_card(self)
 
 func _on_buy_btn_pressed():
-	if GlobalManager.money >= card_price:
-		GlobalManager.money -= card_price
-		get_parent().remove_child(self)
-		CardManager.card_bought(self)
+	if CardManager.current_cards.size() < 5:
+		if GlobalManager.money >= card_price:
+			GlobalManager.money -= card_price
+			get_parent().remove_child(self)
+			CardManager.card_bought(self)
 	else:
 		pass
+		
 func disable_shop_features():
 	$Discription_Box/Buy_btn.visible = false
+	$Discription_Box/sell_btn.show()
+
+
+func _on_sell_btn_pressed() -> void:
+	CardManager.sell(self)
+	$Discription_Box/Buy_btn.visible = true
+	$Discription_Box/sell_btn.hide()

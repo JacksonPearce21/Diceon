@@ -27,13 +27,16 @@ func update_money():
 	
 func update_labels():
 	await get_tree().create_timer(1).timeout
-	rolls_remaining.text =  "$" + str(GlobalManager.dice_rolls)
-	money_made += GlobalManager.dice_rolls
+	if not CardManager.current_cards.has(preload("res://Scenes/Compound_gamble.tscn")):
+		rolls_remaining.text =  "$" + str(GlobalManager.dice_rolls)
+		money_made += GlobalManager.dice_rolls
 	calculate_money()
 	await get_tree().create_timer(1).timeout
 	
-	win_money.text =  "$" + str(GlobalManager.win_money)
-	money_made += GlobalManager.win_money
+	if not CardManager.current_cards.has(preload("res://Scenes/Compound_gamble.tscn")):
+		win_money.text =  "$" + str(GlobalManager.win_money)
+		money_made += GlobalManager.win_money
+		
 	calculate_money()
 	await get_tree().create_timer(1).timeout
 	
@@ -69,11 +72,10 @@ func _on_click_catcher_gui_input(event: InputEvent):
 		
 func check_for_cards():
 	if CardManager.current_cards.has(preload("res://Scenes/on_the_edge_working.tscn")):
-		print("whatsup")
 		CardEffects.on_the_edge(GlobalManager.dice_rolls)
 		if CardEffects.zero_rolls == true:
-			await get_tree().create_timer(0.75).timeout
-			GlobalManager.money += 4
+			await get_tree().create_timer(1).timeout
+			GlobalManager.money += 10
 		CardEffects.show_on_the_edge_effect = false
 		
 	CardEffects.reset_variables()

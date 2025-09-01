@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://d27dsxdcf0ldf" path="res://Card_theme.tres" id="1_ynbck"]
 [ext_resource type="Script" uid="uid://woxhdnamhk2s" path="res://Scenes/on_the_edge.gd" id="2_ynbck"]
-[ext_resource type="Texture2D" uid="uid://dlayg2wpobjlh" path="res://Assets/PNG-cards-1.3/5_of_diamonds.png" id="3_tinxn"]
+[ext_resource type="Texture2D" uid="uid://csocyg8fnwsqa" path="res://Assets/PNG-cards-1.3/10_of_diamonds.png" id="3_ynbck"]
 [ext_resource type="Theme" uid="uid://twfci1goorii" path="res://Assets/Text theme.tres" id="4_sety5"]
 [ext_resource type="Theme" uid="uid://bs82185dtcax6" path="res://Assets/Button theme.tres" id="5_uv3a8"]
 
@@ -21,7 +21,7 @@ script = ExtResource("2_ynbck")
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 130.0
-texture = ExtResource("3_tinxn")
+texture = ExtResource("3_ynbck")
 expand_mode = 1
 
 [node name="Discription_Box" type="Panel" parent="."]
@@ -49,7 +49,7 @@ offset_right = 124.0
 offset_bottom = 131.0
 theme = ExtResource("4_sety5")
 theme_override_font_sizes/font_size = 14
-text = "If 0 rolls are left at the end of a round, gain $5"
+text = "If 0 rolls are left at the end of a round, gain $10"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -64,7 +64,19 @@ scale = Vector2(1.00552, 0.98905)
 theme = ExtResource("5_uv3a8")
 text = "BUY"
 
+[node name="sell_btn" type="Button" parent="Discription_Box"]
+visible = false
+offset_left = -97.0
+offset_top = 96.0
+offset_right = -15.0
+offset_bottom = 128.0
+scale = Vector2(1.00552, 0.98905)
+theme = ExtResource("5_uv3a8")
+text = "SELL
+"
+
 [node name="Panel" type="Panel" parent="."]
+z_index = 4
 layout_mode = 0
 offset_top = 134.0
 offset_right = 101.0
@@ -75,10 +87,11 @@ layout_mode = 0
 offset_right = 102.0
 offset_bottom = 40.0
 theme = ExtResource("4_sety5")
-theme_override_colors/font_color = Color(0.278076, 0.751876, 1, 1)
-text = "+x to int"
+theme_override_colors/font_color = Color(0.723335, 0.736837, 1.54018e-06, 1)
+text = "+$10!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="Discription_Box/Buy_btn" to="." method="_on_buy_btn_pressed"]
+[connection signal="pressed" from="Discription_Box/sell_btn" to="." method="_on_sell_btn_pressed"]

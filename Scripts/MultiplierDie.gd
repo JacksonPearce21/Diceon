@@ -35,7 +35,17 @@ func roll():
 	tween.tween_property(
 		self, "rotation_degrees", random_rot_end, 0.3)
 	await get_tree().create_timer(1.0).timeout
-	current_face_value = sides.keys().pick_random()
+	
+	var weighted_faces
+	
+	if not CardManager.current_cards.has(preload("res://Scenes/weighed_scales.tscn")):
+		weighted_faces = [1, 2, 3, 4, 5, 6]
+
+	if CardManager.current_cards.has(preload("res://Scenes/weighed_scales.tscn")):
+		weighted_faces = [1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6] 
+
+	current_face_value = weighted_faces.pick_random()
+	tween_to_face(current_face_value)
 	tween_to_face(current_face_value)
 
 func tween_to_face(value: int):
